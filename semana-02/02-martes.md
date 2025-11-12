@@ -243,8 +243,8 @@ RMSE = √12,400,000 ≈ 3,521€
 
 **Para el examen AI-900:**
 
-- ✅ Conoce QUÉ miden ambas
-- ✅ Sabe que ambas miden error promedio
+- ✅ Conocer QUÉ miden ambas
+- ✅ Saber que ambas miden el error promedio
 - ✅ RMSE penaliza errores grandes más
 - ❌ NO necesitas calcularlas manualmente
 
@@ -263,6 +263,15 @@ RMSE = √12,400,000 ≈ 3,521€
 - **R² = 0.5** (50%) → Modelo explica solo 50%
 - **R² = 0.0** (0%) → Modelo no explica nada (tan malo como predecir el promedio)
 - **R² < 0** → Modelo PEOR que predecir el promedio
+
+```
+R² responde: "De TODO lo que varían mis datos,
+             ¿qué PORCENTAJE puedo explicar con mi modelo?"
+
+R² = 0.85 significa:
+"Mi modelo explica 85% de POR QUÉ los datos son diferentes.
+El otro 15% se debe a factores que no incluí."
+```
 
 ---
 
