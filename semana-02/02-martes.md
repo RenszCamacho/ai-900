@@ -128,12 +128,11 @@ MÉTRICAS DE REGRESIÓN
 **Fórmula en palabras:**
 
 ```
-MAE = Promedio de |Valor Real - Valor Predicho|
+MAE = Promedio del valor absoluto
+VALOR ABSOLUTO = Valor real - Valor Predicho
 ```
 
-**El símbolo | | significa "valor absoluto" (ignorar si es positivo o negativo)**
-
----
+## NOTA: El valor absoluto ignora si es positivo o negativo
 
 ### 💡 Ejemplo práctico:
 
