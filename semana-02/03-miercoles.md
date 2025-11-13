@@ -255,7 +255,7 @@ DIJE│             │   (FP)      │    (TP)     │
 ```
 MÉTRICAS DE CLASIFICACIÓN
 │
-├── 1. Accuracy (Exactitud)
+├── 1. Accuracy (Precisión Global)
 ├── 2. Precision (Precisión)
 ├── 3. Recall (Exhaustividad/Sensibilidad)
 └── 4. F1-Score (Balance entre Precision y Recall)
@@ -263,7 +263,7 @@ MÉTRICAS DE CLASIFICACIÓN
 
 ---
 
-## 1️⃣ ACCURACY (Exactitud)
+## 1️⃣ ACCURACY (Precisión Global)
 
 ### 📊 ¿Qué mide?
 
@@ -557,7 +557,7 @@ F1 = 2 × (Precision × Recall) / (Precision + Recall)
 ### 🎯 ¿Cuándo usar F1-Score?
 
 ✅ **Cuando necesitas balance entre Precision y Recall**
-✅ **Cuando clases están desbalanceadas**
+✅ **Cuando las clases están desbalanceadas**
 ✅ **Como métrica única para comparar modelos**
 ✅ **Cuando no puedes decidir si priorizar precision o recall**
 
@@ -669,12 +669,12 @@ F1 = 0.50 = 50%
 
 ### 📋 Evaluación completa:
 
-| Métrica   | Valor | Interpretación                 |
-| --------- | ----- | ------------------------------ |
-| Accuracy  | 96%   | ✅ Parece bueno, pero engañoso |
-| Precision | 40%   | ❌ Molesto muchos clientes     |
-| Recall    | 67%   | ⚠️ Pierdo 1 de cada 3 fraudes  |
-| F1-Score  | 50%   | ❌ Modelo pobre en general     |
+| Métrica   | Valor | Interpretación                 | En definicion de fraude                                                                                      |
+| --------- | ----- | ------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| Accuracy  | 96%   | ✅ Parece bueno, pero engañoso | Cuando veo que la mayoria NO son fraude                                                                      |
+| Precision | 40%   | ❌ Molesto muchos clientes     | Porcentaje bajo. Cuando digo, que si eran fraude, pero NO lo eran. Alto porcentaje de precision da muchos FN |
+| Recall    | 67%   | ⚠️ Pierdo 1 de cada 3 fraudes  | Porcentaje medio. Cuando digo, que no eran fraude, pero SI lo eran. Alto Porcentaje de Recall da muchos FP   |
+| F1-Score  | 50%   | ❌ Modelo pobre en general     | porcentaje medio. Balance del fraude mediocre                                                                |
 
 **Conclusión:**
 
@@ -793,13 +793,13 @@ Total: 1000 productos
 
 Calcula:
 
-- TP = \_\_\_
-- TN = \_\_\_
-- FP = \_\_\_
-- FN = \_\_\_
-- Accuracy = \_\_\_
-- Precision = \_\_\_
-- Recall = \_\_\_
+- TP = \_\_\_ 80
+- TN = \_\_\_ 850
+- FP = \_\_\_ 20
+- FN = \_\_\_ 50
+- Accuracy = \_\_\_ 0.93
+- Precision = \_\_\_ 0.8
+- Recall = \_\_\_ 0.61
 - ¿Es un buen modelo? \_\_\_
 
 ---
