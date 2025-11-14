@@ -14,7 +14,7 @@ Entender qué es Azure Machine Learning, sus componentes principales y cuándo u
 
 **Lunes:** Tipos de ML (Supervisado, No supervisado, Refuerzo)
 **Martes:** Regresión y métricas (MAE, RMSE, R²)
-**Miércoles:** Clasificación y métricas (Accuracy, Precision, Recall, F1)
+**Miércoles:** Clasificación y métricas (Accuracy: ["Precision Global"], Precision, Recall, F1)
 
 **HOY:** Conectamos toda esa teoría con Azure ML
 
