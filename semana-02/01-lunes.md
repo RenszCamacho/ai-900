@@ -875,6 +875,174 @@ D) Clasificación
 
 ---
 
+## 🎓 PARA EL EXAMEN - PREGUNTAS TÍPICAS
+
+## Pregunta 1
+
+**ES:** _¿Cuál de los siguientes es un ejemplo de aprendizaje supervisado?_
+**EN:** _Which of the following is an example of supervised learning?_
+
+**Opciones:**
+A) Agrupar clientes en segmentos basándose en comportamiento de compra  
+B) Predecir el precio de una casa basándose en características como tamaño y ubicación  
+C) Un robot que aprende a caminar mediante prueba y error  
+D) Detectar patrones inusuales en transacciones bancarias sin etiquetas previas
+
+**Respuesta correcta:** B
+
+**Explicación:**  
+El aprendizaje supervisado requiere datos etiquetados (entrada + salida correcta conocida). Predecir el precio de una casa es regresión supervisada porque tenemos ejemplos históricos de casas con sus precios reales.
+
+- A) Es aprendizaje no supervisado (clustering)
+- C) Es aprendizaje por refuerzo
+- D) Es aprendizaje no supervisado (detección de anomalías)
+
+---
+
+## Pregunta 2
+
+**ES:** _Una empresa quiere agrupar sus productos en categorías basándose en similitudes, pero no tiene categorías predefinidas. ¿Qué tipo de Machine Learning debe usar?_  
+**EN:** _A company wants to group its products into categories based on similarities, but doesn't have predefined categories. What type of Machine Learning should they use?_
+
+**Opciones:**
+A) Supervised Learning (Aprendizaje supervisado)  
+B) Unsupervised Learning (Aprendizaje no supervisado)  
+C) Reinforcement Learning (Aprendizaje por refuerzo)  
+D) Semi-supervised Learning (Aprendizaje semi-supervisado)
+
+**Respuesta correcta:** B
+
+**Explicación:**  
+El aprendizaje no supervisado es ideal cuando NO tienes etiquetas predefinidas y quieres descubrir patrones o agrupaciones naturales en los datos. El algoritmo de clustering (como K-means) encontrará grupos similares automáticamente.
+
+- A) Requeriría categorías ya definidas
+- C) Es para decisiones secuenciales con recompensas
+- D) Requiere al menos algunas etiquetas
+
+---
+
+## Pregunta 3
+
+**ES:** _¿Cuál es la diferencia principal entre clasificación y regresión?_  
+**EN:** _What is the main difference between classification and regression?_
+
+**Opciones:**
+A) Clasificación predice valores continuos, regresión predice categorías  
+B) Clasificación predice categorías, regresión predice valores continuos  
+C) Clasificación usa datos no supervisados, regresión usa datos supervisados  
+D) No hay diferencia, son términos intercambiables
+
+**Respuesta correcta:** B
+
+**Explicación:**
+
+- **Clasificación:** Predice categorías discretas (ej: spam/no spam, perro/gato)
+- **Regresión:** Predice valores numéricos continuos (ej: precio, temperatura, edad)
+
+Ambos son tipos de aprendizaje supervisado, pero se diferencian en el tipo de variable objetivo.
+
+---
+
+## Pregunta 4
+
+**ES:** _Un agente de IA aprende a jugar ajedrez mejorando su estrategia después de cada partida ganada o perdida. ¿Qué tipo de aprendizaje utiliza?_  
+**EN:** _An AI agent learns to play chess by improving its strategy after each won or lost game. What type of learning does it use?_
+
+**Opciones:**
+A) Supervised Learning  
+B) Unsupervised Learning  
+C) Reinforcement Learning  
+D) Transfer Learning
+
+**Respuesta correcta:** C
+
+**Explicación:**  
+El aprendizaje por refuerzo es perfecto para escenarios donde:
+
+- Un agente toma decisiones secuenciales
+- Recibe recompensas (ganar) o penalizaciones (perder)
+- Aprende la mejor estrategia con el tiempo
+- No necesita ejemplos etiquetados, aprende de la experiencia
+
+Juegos, robótica y control son aplicaciones típicas del reinforcement learning.
+
+---
+
+## Pregunta 5
+
+**ES:** _¿Cuál de las siguientes NO es una característica del aprendizaje no supervisado?_  
+**EN:** _Which of the following is NOT a characteristic of unsupervised learning?_
+
+**Opciones:**
+A) No requiere datos etiquetados  
+B) Descubre patrones ocultos en los datos  
+C) Predice valores basándose en ejemplos conocidos  
+D) Puede realizar clustering y reducción de dimensionalidad
+
+**Respuesta correcta:** C
+
+**Explicación:**  
+Predecir valores basándose en ejemplos conocidos es característico del **aprendizaje supervisado**, no del no supervisado.
+
+Aprendizaje no supervisado:
+
+- ✅ No necesita etiquetas
+- ✅ Busca patrones naturales
+- ✅ Clustering (K-means)
+- ✅ Reducción de dimensionalidad (PCA)
+- ❌ NO predice valores específicos
+
+---
+
+## Pregunta 6
+
+**ES:** _Una tienda online quiere recomendar productos similares a los que un cliente está viendo. ¿Qué técnica de Machine Learning es más apropiada?_  
+**EN:** _An online store wants to recommend products similar to what a customer is viewing. Which Machine Learning technique is most appropriate?_
+
+**Opciones:**
+A) Classification  
+B) Regression  
+C) Clustering  
+D) Reinforcement Learning
+
+**Respuesta correcta:** C
+
+**Explicación:**  
+Clustering (aprendizaje no supervisado) agrupa productos similares basándose en características comunes. Productos en el mismo cluster son similares y pueden recomendarse juntos.
+
+- A) Classification predice categorías, no encuentra similitudes
+- B) Regression predice valores numéricos
+- D) Reinforcement learning es para decisiones secuenciales
+
+---
+
+## Pregunta 7
+
+**ES:** _¿Qué es "feature engineering" en Machine Learning?_  
+**EN:** _What is "feature engineering" in Machine Learning?_
+
+**Opciones:**
+A) El proceso de entrenar múltiples modelos simultáneamente  
+B) El proceso de seleccionar y transformar variables de entrada para mejorar el modelo  
+C) El proceso de validar la precisión del modelo  
+D) El proceso de desplegar el modelo en producción
+
+**Respuesta correcta:** B
+
+**Explicación:**  
+Feature engineering es el arte y ciencia de crear, seleccionar y transformar las características (features/variables) de entrada para que el modelo aprenda mejor.
+
+**Ejemplos:**
+
+- Crear nueva variable "edad" desde "fecha de nacimiento"
+- Convertir texto en números (encoding)
+- Normalizar valores
+- Combinar variables existentes
+
+Es una de las habilidades más importantes en ML y puede mejorar dramáticamente el rendimiento del modelo.
+
+---
+
 ## 🎊 ¡EXCELENTE TRABAJO EN EL LUNES!
 
 **Lo que has logrado hoy:**
