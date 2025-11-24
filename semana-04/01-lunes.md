@@ -566,6 +566,315 @@ Antes de terminar, verifica:
 
 ---
 
+# 📝 PREGUNTAS ESTILO EXAMEN MICROSOFT AI-900
+
+## Tema: Fundamentos de NLP
+
+---
+
+## ❓ PREGUNTA 1 - Escenario de E-commerce
+
+**ESCENARIO:**
+Una empresa de comercio electrónico recibe miles de reseñas de productos diariamente. Quieren automatizar el proceso de identificar qué reseñas son positivas, negativas o neutras para priorizar la atención al cliente en casos negativos.
+
+**PREGUNTA:**
+¿Qué capacidad de Azure AI Language deberían usar?
+
+**A)** Named Entity Recognition (NER)  
+**B)** Key Phrase Extraction  
+**C)** Sentiment Analysis  
+**D)** Language Detection
+
+<details>
+<summary>👉 Ver respuesta correcta</summary>
+
+**RESPUESTA CORRECTA: C) Sentiment Analysis**
+
+**EXPLICACIÓN:**
+
+- **Sentiment Analysis** (Análisis de sentimiento) es la capacidad de NLP que determina si un texto expresa sentimiento positivo, negativo o neutral
+- Es perfecta para analizar reseñas de productos y clasificarlas automáticamente
+- Permite priorizar respuestas a clientes insatisfechos (sentimiento negativo)
+
+**Por qué las otras son incorrectas:**
+
+- **A) NER**: Identifica entidades como nombres, lugares, fechas - no determina sentimiento
+- **B) Key Phrase Extraction**: Extrae temas principales pero no determina si son positivos o negativos
+- **D) Language Detection**: Solo identifica el idioma del texto, no el sentimiento
+
+**TIP PARA EL EXAMEN:**
+Cuando veas escenarios sobre "opiniones", "satisfacción", "positivo/negativo", "reseñas" → piensa en **Sentiment Analysis**
+
+</details>
+
+---
+
+## ❓ PREGUNTA 2 - Escenario de Documentos Legales
+
+**ESCENARIO:**
+Un bufete de abogados necesita procesar cientos de contratos y extraer automáticamente información específica como: nombres de las partes involucradas, fechas de firma, montos económicos, y ubicaciones de las propiedades mencionadas.
+
+**PREGUNTA:**
+¿Qué tarea de NLP es la más apropiada para este escenario?
+
+**A)** Sentiment Analysis  
+**B)** Named Entity Recognition (NER)  
+**C)** Translation  
+**D)** Key Phrase Extraction
+
+<details>
+<summary>👉 Ver respuesta correcta</summary>
+
+**RESPUESTA CORRECTA: B) Named Entity Recognition (NER)**
+
+**EXPLICACIÓN:**
+
+- **Named Entity Recognition** identifica y clasifica entidades específicas en el texto:
+  - **Personas**: "Juan Pérez", "María García"
+  - **Fechas**: "15 de marzo de 2025"
+  - **Cantidades monetarias**: "50,000 euros"
+  - **Ubicaciones**: "Madrid", "Calle Principal 123"
+- Es ideal para **extracción de información estructurada** de documentos
+
+**Por qué las otras son incorrectas:**
+
+- **A) Sentiment Analysis**: Detecta emociones, no extrae información específica
+- **C) Translation**: Traduce entre idiomas, no extrae datos
+- **D) Key Phrase Extraction**: Extrae temas generales, pero no clasifica tipos específicos de entidades
+
+**TIP PARA EL EXAMEN:**
+Cuando veas escenarios sobre "extraer nombres, fechas, lugares, cantidades" → piensa en **Named Entity Recognition (NER)**
+
+</details>
+
+---
+
+## ❓ PREGUNTA 3 - Escenario de Soporte Multilingüe
+
+**ESCENARIO:**
+Una empresa global recibe tickets de soporte de clientes en múltiples idiomas (inglés, español, francés, alemán, japonés). Necesitan enrutar automáticamente cada ticket al equipo de soporte que habla ese idioma específico.
+
+**PREGUNTA:**
+¿Qué capacidad de Azure AI Language deben implementar PRIMERO?
+
+**A)** Language Detection  
+**B)** Translation  
+**C)** Sentiment Analysis  
+**D)** Entity Recognition
+
+<details>
+<summary>👉 Ver respuesta correcta</summary>
+
+**RESPUESTA CORRECTA: A) Language Detection**
+
+**EXPLICACIÓN:**
+
+- **Language Detection** identifica en qué idioma está escrito un texto
+- Es el **primer paso necesario** antes de poder enrutar o traducir
+- Permite clasificar y dirigir automáticamente cada ticket al equipo correcto
+- Azure AI Language puede detectar más de 120 idiomas
+
+**Por qué las otras son incorrectas:**
+
+- **B) Translation**: Útil después, pero primero necesitas SABER qué idioma es
+- **C) Sentiment Analysis**: Ayuda a priorizar urgencia, pero no resuelve el enrutamiento por idioma
+- **D) Entity Recognition**: Extrae información, pero no identifica el idioma
+
+**TIP PARA EL EXAMEN:**
+Cuando veas "enrutar por idioma", "clasificar por lenguaje", "soporte multilingüe" → piensa en **Language Detection** como primer paso
+
+</details>
+
+---
+
+## ❓ PREGUNTA 4 - Escenario de Análisis de Documentos
+
+**ESCENARIO:**
+Una universidad necesita analizar miles de trabajos de investigación para crear un sistema de búsqueda. Quieren que los usuarios puedan buscar papers por tema principal sin tener que leer todo el documento. Por ejemplo, si buscan "inteligencia artificial", el sistema debería devolver papers donde IA sea un tema central.
+
+**PREGUNTA:**
+¿Qué característica de Azure AI Language es la más adecuada?
+
+**A)** Sentiment Analysis  
+**B)** Language Detection  
+**C)** Key Phrase Extraction  
+**D)** Named Entity Recognition
+
+<details>
+<summary>👉 Ver respuesta correcta</summary>
+
+**RESPUESTA CORRECTA: C) Key Phrase Extraction**
+
+**EXPLICACIÓN:**
+
+- **Key Phrase Extraction** identifica los temas y conceptos principales de un texto
+- Extrae automáticamente las frases más importantes sin necesidad de leer todo
+- Perfecto para:
+  - Indexación de documentos
+  - Sistemas de búsqueda por tema
+  - Categorización automática
+  - Generación de etiquetas (tags)
+
+**Ejemplo:**
+
+```
+TEXTO: "La inteligencia artificial está transformando la medicina.
+Los algoritmos de machine learning detectan enfermedades en imágenes."
+
+KEY PHRASES EXTRAÍDAS:
+- "inteligencia artificial"
+- "medicina"
+- "algoritmos de machine learning"
+- "detección de enfermedades"
+```
+
+**Por qué las otras son incorrectas:**
+
+- **A) Sentiment Analysis**: Detecta emociones, no temas principales
+- **B) Language Detection**: Solo identifica el idioma
+- **D) NER**: Extrae entidades específicas (nombres, fechas), no temas conceptuales
+
+**TIP PARA EL EXAMEN:**
+Cuando veas "temas principales", "conceptos clave", "indexación", "categorización" → piensa en **Key Phrase Extraction**
+
+</details>
+
+---
+
+## ❓ PREGUNTA 5 - Escenario de Chatbot FAQ
+
+**ESCENARIO:**
+Una empresa quiere crear un chatbot que responda preguntas frecuentes de los clientes. El chatbot debe poder leer una base de conocimientos (documentación, manuales, FAQs) y encontrar la respuesta específica cuando un cliente hace una pregunta.
+
+Ejemplo:
+
+- **Cliente pregunta:** "¿Cuál es el horario de atención?"
+- **El bot busca en la documentación** y encuentra: "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00"
+- **El bot responde:** "De lunes a viernes de 9:00 a 18:00"
+
+**PREGUNTA:**
+¿Qué capacidad de Azure AI necesitan implementar?
+
+**A)** Sentiment Analysis  
+**B)** Question Answering  
+**C)** Key Phrase Extraction  
+**D)** Language Translation
+
+<details>
+<summary>👉 Ver respuesta correcta</summary>
+
+**RESPUESTA CORRECTA: B) Question Answering**
+
+**EXPLICACIÓN:**
+
+- **Question Answering** (anteriormente QnA Maker) es específicamente diseñado para:
+  - Buscar respuestas en una base de conocimientos
+  - Extraer la respuesta exacta a una pregunta
+  - Crear chatbots y asistentes virtuales
+  - Mantener una base de pares pregunta-respuesta
+
+**Cómo funciona:**
+
+```
+1. Cargas tu documentación/FAQs
+2. El servicio indexa el contenido
+3. Usuario hace pregunta
+4. El sistema encuentra la respuesta más relevante
+5. Devuelve la respuesta con un "confidence score"
+```
+
+**Por qué las otras son incorrectas:**
+
+- **A) Sentiment Analysis**: Detecta emociones, no responde preguntas
+- **C) Key Phrase Extraction**: Extrae temas, pero no busca respuestas específicas
+- **D) Translation**: Traduce idiomas, no responde preguntas
+
+**TIP PARA EL EXAMEN:**
+Cuando veas "chatbot", "FAQ", "responder preguntas", "base de conocimientos" → piensa en **Question Answering**
+
+</details>
+
+---
+
+## 🎯 RESUMEN DE PATRONES PARA EL EXAMEN
+
+### 🔍 Identifica estas palabras clave:
+
+| **Si ves esto...**                                           | **Piensa en...**                   |
+| ------------------------------------------------------------ | ---------------------------------- |
+| Opiniones, reseñas, positivo/negativo, satisfacción          | **Sentiment Analysis**             |
+| Nombres, fechas, lugares, cantidades, organizaciones         | **Named Entity Recognition (NER)** |
+| Temas principales, conceptos, indexación, categorización     | **Key Phrase Extraction**          |
+| Detectar idioma, enrutar por lenguaje, clasificar por idioma | **Language Detection**             |
+| Traducir, convertir entre idiomas                            | **Translation**                    |
+| Chatbot, FAQ, responder preguntas, base de conocimientos     | **Question Answering**             |
+
+---
+
+## 📊 PUNTUACIÓN
+
+Marca cuántas respondiste correctamente:
+
+- [ ] Pregunta 1 - E-commerce (Sentiment Analysis)
+- [ ] Pregunta 2 - Documentos Legales (NER)
+- [ ] Pregunta 3 - Soporte Multilingüe (Language Detection)
+- [ ] Pregunta 4 - Análisis de Documentos (Key Phrase Extraction)
+- [ ] Pregunta 5 - Chatbot FAQ (Question Answering)
+
+### Evaluación:
+
+- **5/5 correctas** ✅ ¡Excelente! Dominas los conceptos
+- **4/5 correctas** 👍 Muy bien, repasa la que fallaste
+- **3/5 correctas** 📚 Bien, revisa los conceptos principales
+- **2 o menos** 🔄 Repasa la lección de hoy
+
+---
+
+## 💡 TIPS FINALES PARA EL EXAMEN
+
+### 1️⃣:: **Lee el escenario COMPLETO**
+
+No te apresures. Microsoft pone información clave en todo el texto.
+
+### 2️⃣:: **Identifica el OBJETIVO principal**
+
+Pregúntate: ¿Qué problema están tratando de resolver?
+
+### 3️⃣:: **Busca palabras clave**
+
+"opinión" → Sentiment  
+"extraer nombres/fechas" → NER  
+"temas" → Key Phrases  
+"responder preguntas" → Question Answering
+
+### 4️⃣:: **Elimina opciones obviamente incorrectas**
+
+Reduce las opciones antes de decidir.
+
+### 5️⃣:: **En caso de duda**
+
+Pregunta: ¿Cuál es la tarea MÁS ESPECÍFICA para este problema?
+
+---
+
+## 🎓 PARA PRACTICAR MÁS
+
+**Crea tus propios escenarios:**
+
+1. Piensa en un caso de uso real
+2. Pregúntate: ¿Qué tarea de NLP necesito?
+3. Verifica tu respuesta con los patrones de arriba
+
+**Ejemplos:**
+
+- "Analizar tweets sobre una marca" → ¿Qué usarías?
+- "Extraer direcciones de correos" → ¿Qué usarías?
+- "Traducir un sitio web" → ¿Qué usarías?
+
+---
+
+**¡Sigue practicando! Estas preguntas son muy similares a las del examen real. 💪**
+
 ## 🎯 PARA MAÑANA (Martes 26 Nov)
 
 **Tema:** Azure AI Language - Análisis de texto y sentimiento
