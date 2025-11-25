@@ -36,21 +36,21 @@ Semana 2: Machine Learning en profundidad
   Mié 12 ✅ Clasificación y métricas
   Jue 13 ✅ Azure ML workspace
   Vie 14 ✅ AutoML
-  Sáb 15 📅 Lab: Crear primer modelo
-  Dom 16 📅 Descanso
+  Sáb 15 ✅ Lab: Crear primer modelo
+  Dom 16 ✅ Descanso
 
 Semana 3: Computer Vision
-  Lun 17 📅 Fundamentos CV
-  Mar 18 📅 Azure AI Vision
-  Mié 19 📅 Face API + OCR
-  Jue 20 📅 Custom Vision
-  Vie 21 📅 Lab: Analizar imágenes
-  Sáb 22 📅 Lab: Custom Vision
-  Dom 23 📅 Descanso
+  Lun 17 ✅ Fundamentos CV
+  Mar 18 ✅ Fzure AI Vision
+  Mié 19 ✅ Face API + OCR
+  Jue 20 ✅ Custom Vision
+  Vie 21 ✅ Lab: Analizar imágenes
+  Sáb 22 ✅ Lab: Custom Vision
+  Dom 23 ✅ Descanso
 
 Semana 4: Natural Language Processing
-  Lun 24 📅 Fundamentos NLP
-  Mar 25 📅 Azure AI Language
+  Lun 24 ✅ Fundamentos NLP
+  Mar 25 ✅ Azure AI Language
   Mié 26 📅 Translator + Speech
   Jue 27 📅 Lab: Text Analytics
   Vie 28 📅 Lab: Speech Services
