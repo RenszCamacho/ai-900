@@ -1,6 +1,6 @@
 # AI-900 Certification - Semana 5, Día 1
 
-## Azure AI Services Overview & Responsible AI Principles
+## Introducción a la IA Generativa (Generative AI)
 
 **Fecha:** Lunes, Semana 5  
 **Duración estimada:** 45-60 minutos  
@@ -10,251 +10,408 @@
 
 ## 📋 Objetivos del día
 
-- Comprender la arquitectura general de Azure AI Services
-- Conocer los principios de IA Responsable de Microsoft
-- Entender consideraciones de seguridad y gobernanza en AI
+- Comprender qué es la IA Generativa y cómo funciona
+- Conocer los tipos de modelos generativos
+- Entender las diferencias entre IA tradicional vs IA Generativa
+- Identificar casos de uso comunes de IA Generativa
+- Conocer los conceptos fundamentales de Large Language Models (LLMs)
 
 ---
 
-## 1. Azure AI Services: Visión General
+## 1. ¿Qué es la IA Generativa?
 
-### ¿Qué son Azure AI Services?
+### Definición
 
-Azure AI Services es una colección de servicios de IA preentrenados que puedes usar mediante APIs REST. Anteriormente conocidos como "Cognitive Services", ahora incluyen:
+La **IA Generativa** es un tipo de inteligencia artificial que puede crear contenido nuevo y original, incluyendo:
+- Texto (artículos, código, emails)
+- Imágenes (arte, fotografías, diseños)
+- Audio (música, voz, efectos de sonido)
+- Video (animaciones, clips)
+- Código (programas, scripts)
 
-- **Azure OpenAI Service** - Acceso a modelos GPT, Codex, DALL-E
-- **Azure AI Vision** - Computer Vision, Custom Vision, Face API
-- **Azure AI Language** - Text Analytics, QnA Maker, LUIS, Translator
-- **Azure AI Speech** - Speech-to-Text, Text-to-Speech, Translation
-- **Azure AI Decision** - Anomaly Detector, Personalizer, Content Moderator
+### ¿Cómo funciona?
 
-### Características clave
+Los modelos generativos aprenden patrones de grandes cantidades de datos de entrenamiento y luego pueden generar contenido similar pero nuevo.
 
-- **Pre-entrenados**: No necesitas entrenar modelos desde cero
-- **API-first**: Integración simple mediante REST APIs
-- **Multi-región**: Disponibilidad global
-- **Escalable**: Ajusta recursos según demanda
-- **Seguro**: Autenticación con claves o Azure AD
-
----
-
-## 2. Creación y Gestión de Recursos
-
-### Dos tipos de recursos
-
-#### a) Multi-service resource (Recomendado para desarrollo)
-- Un solo endpoint para múltiples servicios
-- Una sola clave de acceso
-- Facturación consolidada
-- Nombre: "Azure AI services" en el portal
-
-#### b) Single-service resource
-- Recurso dedicado para un servicio específico
-- Útil para producción con necesidades específicas
-- Ejemplo: Solo "Computer Vision" o solo "Text Analytics"
-
-### Información importante para el recurso
-
-- **Endpoint**: URL base para llamadas API  
-  Ejemplo: `https://myresource.cognitiveservices.azure.com/`
-- **Keys**: Clave primaria y secundaria para autenticación
-- **Location/Region**: Región de Azure donde se despliega
-- **Pricing tier**: Free (F0) o Standard (S0, S1, etc.)
+**Proceso básico:**
+1. **Entrenamiento**: El modelo analiza millones de ejemplos
+2. **Aprendizaje de patrones**: Identifica estructuras, estilos, relaciones
+3. **Generación**: Crea contenido nuevo basado en esos patrones
+4. **Refinamiento**: Ajusta la salida según instrucciones (prompts)
 
 ---
 
-## 3. Principios de IA Responsable de Microsoft
+## 2. IA Tradicional vs IA Generativa
 
-Microsoft define **6 principios fundamentales** para el desarrollo de IA:
+### IA Tradicional (Predictiva/Analítica)
 
-### 1. Fairness (Equidad)
-- Los sistemas de IA deben tratar a todas las personas de manera justa
-- Evitar sesgos basados en género, etnia, edad, etc.
-- **Ejemplo**: Un modelo de contratación no debe favorecer un género sobre otro
+**Propósito**: Analizar, clasificar, predecir
 
-### 2. Reliability & Safety (Confiabilidad y Seguridad)
-- Los sistemas deben funcionar de manera confiable y segura
-- Manejar errores apropiadamente
-- **Ejemplo**: Un vehículo autónomo debe detectar y responder a situaciones inesperadas
+**Ejemplos:**
+- Clasificación de emails (spam vs no spam)
+- Predicción de ventas
+- Detección de fraude
+- Reconocimiento de objetos en imágenes
 
-### 3. Privacy & Security (Privacidad y Seguridad)
-- Proteger datos personales y mantener confidencialidad
-- Cumplir con regulaciones (GDPR, etc.)
-- **Ejemplo**: Un chatbot médico debe encriptar información de salud
+**Salida**: Etiquetas, categorías, números, predicciones
 
-### 4. Inclusiveness (Inclusividad)
-- Los sistemas deben beneficiar a todos, incluyendo personas con discapacidades
-- Diseño accesible
-- **Ejemplo**: Reconocimiento de voz que funcione con diferentes acentos
+**Ejemplo práctico:**
+```
+Input: Imagen de un gato
+Output: "Gato" (clasificación)
+```
 
-### 5. Transparency (Transparencia)
-- Los usuarios deben entender cómo funciona el sistema de IA
-- Explicar limitaciones y propósito
-- **Ejemplo**: Divulgar cuando interactúan con un bot vs. una persona
+### IA Generativa
 
-### 6. Accountability (Responsabilidad)
-- Las personas deben ser responsables de los sistemas de IA
-- Gobernanza y supervisión humana
-- **Ejemplo**: Revisión humana en decisiones críticas (préstamos, diagnósticos)
+**Propósito**: Crear, generar, sintetizar
 
----
+**Ejemplos:**
+- Generar artículos o historias
+- Crear imágenes a partir de descripciones
+- Escribir código
+- Componer música
 
-## 4. Consideraciones Prácticas de IA Responsable
+**Salida**: Contenido nuevo y original
 
-### Identificación de Sesgos
+**Ejemplo práctico:**
+```
+Input: "Escribe un poema sobre el océano"
+Output: Un poema completo y único sobre el océano
+```
 
-- **Datos de entrenamiento**: ¿Son representativos?
-- **Etiquetado**: ¿Hay prejuicios en las etiquetas?
-- **Métricas**: Evaluar rendimiento por grupos demográficos
+### Comparación visual
 
-### Transparencia en Azure AI
-
-- **Transparency Notes**: Documentación de cada servicio explicando casos de uso, limitaciones
-- **Disclosure**: Indicar a usuarios cuando interactúan con IA
-- **Explainability**: Entender por qué un modelo toma ciertas decisiones
-
-### Herramientas de Microsoft
-
-- **Fairlearn**: Evaluar y mitigar sesgos en modelos ML
-- **InterpretML**: Explicar predicciones de modelos
-- **Error Analysis**: Identificar dónde fallan los modelos
+| Aspecto | IA Tradicional | IA Generativa |
+|---------|----------------|---------------|
+| **Función principal** | Analizar y predecir | Crear y generar |
+| **Entrada** | Datos para clasificar | Prompts/Instrucciones |
+| **Salida** | Etiquetas, números | Contenido nuevo |
+| **Ejemplo** | "Esta imagen es un perro" | "Crea una imagen de un perro" |
+| **Modelos típicos** | Random Forest, SVM | GPT, DALL-E, Stable Diffusion |
 
 ---
 
-## 5. Seguridad y Gobernanza
+## 3. Tipos de Modelos Generativos
 
-### Autenticación y Autorización
+### 1. Large Language Models (LLMs)
 
-- **Subscription keys**: Claves de suscripción (primaria/secundaria)
-- **Azure Active Directory**: Autenticación más segura con tokens
-- **Managed Identity**: Permite que servicios de Azure accedan sin credenciales explícitas
+**Descripción**: Modelos entrenados en enormes cantidades de texto
 
-### Content Safety
+**Ejemplos:**
+- **GPT (Generative Pre-trained Transformer)**: GPT-3.5, GPT-4
+- **BERT**: Bidirectional Encoder Representations
+- **LLaMA**: Meta's Large Language Model
 
-**Azure AI Content Safety**: Detecta contenido inapropiado
-- Violencia
-- Odio
-- Contenido sexual
-- Auto-daño
+**Capacidades:**
+- Generación de texto coherente
+- Traducción de idiomas
+- Resumen de documentos
+- Respuesta a preguntas
+- Generación de código
 
-### Cumplimiento
+**Caso de uso:**
+```
+Prompt: "Explica la fotosíntesis para un niño de 8 años"
+Output: Respuesta adaptada al nivel apropiado
+```
 
-- **GDPR**: Protección de datos en Europa
-- **HIPAA**: Estándares de salud en US
-- **ISO 27001**: Estándares de seguridad de información
+### 2. Modelos de Generación de Imágenes
 
-### Monitoreo
+**Descripción**: Crean imágenes a partir de descripciones de texto
 
-- **Azure Monitor**: Rastrear uso, rendimiento, errores
-- **Application Insights**: Telemetría detallada
-- **Logs**: Auditoría de accesos y operaciones
+**Ejemplos:**
+- **DALL-E**: OpenAI
+- **Stable Diffusion**: Stability AI
+- **Midjourney**: Midjourney Inc.
+
+**Capacidades:**
+- Generación de arte digital
+- Modificación de imágenes existentes
+- Creación de variaciones
+- Inpainting (rellenar partes faltantes)
+
+**Caso de uso:**
+```
+Prompt: "Un astronauta montando un caballo en Marte, estilo acuarela"
+Output: Imagen generada según descripción
+```
+
+### 3. Modelos Multimodales
+
+**Descripción**: Trabajan con múltiples tipos de datos (texto, imagen, audio)
+
+**Ejemplos:**
+- **GPT-4 Vision**: Texto + Imágenes
+- **CLIP**: Relaciona imágenes y texto
+- **Flamingo**: Múltiples modalidades
+
+**Capacidades:**
+- Describir imágenes
+- Generar imágenes desde texto
+- Responder preguntas sobre imágenes
+- Análisis de contenido multimedia
 
 ---
 
-## 6. Escenario Práctico
+## 4. Conceptos Fundamentales de LLMs
 
-### Caso: Sistema de Contratación con IA
+### Tokens
 
-Una empresa quiere usar IA para filtrar CVs y recomendar candidatos.
+**¿Qué son?**
+Los tokens son las unidades básicas de procesamiento de texto en LLMs.
 
-**Aplicación de Principios:**
+**Ejemplos de tokenización:**
+```
+"Hola mundo" → ["Hola", " mundo"] = 2 tokens
+"OpenAI" → ["Open", "AI"] = 2 tokens
+"¡Fantástico!" → ["¡", "Fant", "ástico", "!"] = 4 tokens
+```
 
-1. **Fairness**: Entrenar con CVs diversos, probar para sesgos de género/edad
-2. **Reliability**: Sistema de respaldo si la IA falla, no rechazar automáticamente
-3. **Privacy**: Encriptar datos personales, cumplir GDPR
-4. **Inclusiveness**: Considerar formatos alternativos de CV (accesibilidad)
-5. **Transparency**: Informar a candidatos que hay IA en el proceso, explicar criterios
-6. **Accountability**: Revisión humana final, RRHH responsable de decisiones
+**Regla general**: 
+- En inglés: ~1 token = 4 caracteres = 0.75 palabras
+- En español: ~1 token = 3-4 caracteres
+
+**Importancia**: 
+- Los modelos tienen límites de tokens (ej: GPT-4 = 8k, 32k, 128k tokens)
+- El costo de uso se calcula por tokens
+
+### Context Window (Ventana de Contexto)
+
+**Definición**: Cantidad máxima de tokens que un modelo puede procesar a la vez
+
+**Ejemplos:**
+- GPT-3.5: 4,096 tokens (~3,000 palabras)
+- GPT-4: 8,192 - 128,000 tokens
+- Claude 2: 100,000 tokens
+
+**Implicación práctica:**
+Si un documento tiene más tokens que la ventana de contexto, el modelo no puede procesarlo completo en una sola solicitud.
+
+### Temperatura
+
+**Definición**: Parámetro que controla la aleatoriedad/creatividad de las respuestas
+
+**Escala**: 0.0 - 2.0
+
+**Comportamiento:**
+- **Temperatura baja (0.0 - 0.3)**: 
+  - Respuestas más predecibles y deterministas
+  - Útil para: Tareas técnicas, clasificación, extracción de datos
+  
+- **Temperatura media (0.5 - 0.8)**:
+  - Balance entre creatividad y coherencia
+  - Útil para: Conversación general, escritura
+  
+- **Temperatura alta (1.0 - 2.0)**:
+  - Respuestas muy creativas y variadas
+  - Útil para: Brainstorming, contenido creativo, arte
+
+**Ejemplo:**
+```
+Prompt: "Termina la frase: El cielo es..."
+
+Temperatura 0.0: "azul" (siempre la misma)
+Temperatura 0.7: "azul", "hermoso", "infinito" (variado pero sensato)
+Temperatura 1.5: "un lienzo de sueños", "esperanza líquida" (muy creativo)
+```
+
+### Embeddings
+
+**Definición**: Representaciones numéricas (vectores) de texto que capturan significado semántico
+
+**Características:**
+- Palabras similares tienen embeddings similares
+- Permiten buscar por significado, no solo por palabras exactas
+- Útiles para: búsqueda semántica, recomendaciones, clustering
+
+**Ejemplo conceptual:**
+```
+"perro" → [0.2, 0.8, 0.1, 0.9, ...]
+"gato"  → [0.3, 0.7, 0.2, 0.8, ...] (similar)
+"carro" → [0.8, 0.1, 0.9, 0.2, ...] (diferente)
+```
+
+---
+
+## 5. Casos de Uso Comunes
+
+### Generación de Contenido
+- Artículos de blog
+- Descripciones de productos
+- Posts para redes sociales
+- Guiones de video
+
+### Asistencia al Cliente
+- Chatbots inteligentes
+- Respuestas automáticas a emails
+- FAQs dinámicas
+- Soporte multilingüe
+
+### Desarrollo de Software
+- Generación de código
+- Documentación automática
+- Debugging y explicación de código
+- Refactorización
+
+### Creación de Contenido Visual
+- Prototipos de diseño
+- Arte generativo
+- Edición de imágenes
+- Creación de avatares
+
+### Educación
+- Tutores virtuales personalizados
+- Generación de ejercicios
+- Explicaciones adaptadas al nivel
+- Traducción de materiales educativos
+
+### Análisis y Resumen
+- Resumen de documentos largos
+- Extracción de información clave
+- Análisis de sentimientos
+- Síntesis de reuniones
+
+---
+
+## 6. Limitaciones de la IA Generativa
+
+### Alucinaciones (Hallucinations)
+
+**Problema**: Los modelos pueden generar información falsa pero convincente
+
+**Ejemplo:**
+```
+Pregunta: "¿Quién ganó el Premio Nobel de Literatura en 2025?"
+Respuesta incorrecta: "María García lo ganó por su novela 'El Tiempo Perdido'"
+(Inventa nombres y datos que suenan plausibles)
+```
+
+**Mitigación:**
+- Verificar información crítica
+- Usar grounding (anclar a datos reales)
+- Pedir fuentes y referencias
+
+### Sesgos
+
+**Problema**: Los modelos reflejan sesgos presentes en datos de entrenamiento
+
+**Ejemplos:**
+- Sesgos de género en profesiones
+- Sesgos culturales o raciales
+- Representación desigual de idiomas
+
+**Mitigación:**
+- Datos de entrenamiento diversos
+- Fine-tuning responsable
+- Revisión humana
+
+### Falta de Razonamiento Verdadero
+
+**Problema**: Los modelos reconocen patrones, no "entienden" realmente
+
+**Limitaciones:**
+- No tienen conocimiento del mundo real actualizado
+- No pueden razonar causalmente de forma confiable
+- No tienen sentido común verdadero
+
+### Costos y Recursos
+
+**Consideraciones:**
+- Entrenamiento requiere recursos computacionales masivos
+- Inferencia (uso) también consume recursos significativos
+- Costos por token en APIs comerciales
 
 ---
 
 ## ✅ Puntos Clave para el Examen
 
-- Azure AI Services son servicios pre-entrenados accesibles vía API
-- Multi-service resource = un recurso para múltiples servicios
-- Los 6 principios de IA Responsable: Fairness, Reliability, Privacy, Inclusiveness, Transparency, Accountability
-- Transparency Notes explican limitaciones y casos de uso
-- Content Safety detecta contenido inapropiado
-- Autenticación con subscription keys o Azure AD
-- Managed Identity permite acceso seguro sin credenciales explícitas
+- IA Generativa **crea contenido nuevo**, IA tradicional **analiza y predice**
+- **LLMs** (Large Language Models) son modelos entrenados en texto masivo
+- **Tokens** son unidades básicas de procesamiento (~4 caracteres en inglés)
+- **Context Window** es el límite de tokens que un modelo puede procesar
+- **Temperatura** controla creatividad (baja = predecible, alta = creativo)
+- **Embeddings** son representaciones vectoriales que capturan significado
+- **Alucinaciones** = información falsa pero convincente generada por el modelo
+- Casos de uso: generación de contenido, chatbots, código, imágenes, resúmenes
+- Limitaciones: alucinaciones, sesgos, falta de razonamiento real, costos
 
 ---
 
 ## 🎯 Preguntas Estilo Examen Microsoft AI-900
 
 ### Pregunta 1
-Estás desarrollando una aplicación que usa Azure AI Services. Quieres usar un solo recurso para acceder tanto a Computer Vision como a Text Analytics. ¿Qué tipo de recurso debes crear?
+¿Cuál de las siguientes afirmaciones describe MEJOR la diferencia entre IA tradicional e IA generativa?
 
-A) Computer Vision resource  
-B) Text Analytics resource  
-C) Azure AI services resource  
-D) Custom Vision resource
+A) La IA tradicional es más rápida que la IA generativa  
+B) La IA tradicional analiza y predice, mientras que la IA generativa crea contenido nuevo  
+C) La IA generativa solo funciona con texto  
+D) La IA tradicional requiere más datos de entrenamiento
 
-**Respuesta correcta: C) Azure AI services resource**
+**Respuesta correcta: B) La IA tradicional analiza y predice, mientras que la IA generativa crea contenido nuevo**
 
-**Explicación**: El recurso "Azure AI services" (multi-service) te permite acceder a múltiples servicios con un solo endpoint y una sola clave, perfecto cuando necesitas Computer Vision y Text Analytics juntos. Las opciones A y B son recursos single-service.
+**Explicación**: La diferencia fundamental es el propósito: la IA tradicional (clasificación, regresión) analiza datos existentes para hacer predicciones o clasificaciones. La IA generativa crea contenido nuevo (texto, imágenes, código) basándose en patrones aprendidos. Las opciones A, C y D no representan las diferencias fundamentales entre ambos tipos de IA.
 
 ---
 
 ### Pregunta 2
-Tu organización está implementando un sistema de IA para aprobación de préstamos. ¿Cuál de los siguientes principios de IA Responsable requiere que los solicitantes puedan entender por qué se aprobó o rechazó su préstamo?
+Estás configurando un modelo de lenguaje para generar respuestas de servicio al cliente. Necesitas que las respuestas sean consistentes y predecibles. ¿Qué valor de temperatura deberías usar?
 
-A) Fairness  
-B) Transparency  
-C) Privacy & Security  
-D) Inclusiveness
+A) 2.0  
+B) 1.5  
+C) 0.8  
+D) 0.2
 
-**Respuesta correcta: B) Transparency**
+**Respuesta correcta: D) 0.2**
 
-**Explicación**: Transparency (Transparencia) implica que los usuarios deben entender cómo funciona el sistema de IA y por qué toma ciertas decisiones. En este caso, explicar el motivo de aprobación/rechazo es transparencia. Fairness se enfoca en trato equitativo, Privacy en protección de datos, e Inclusiveness en accesibilidad para todos.
+**Explicación**: Para respuestas consistentes y predecibles, necesitas una temperatura **baja** (cercana a 0). Valores bajos como 0.2 hacen que el modelo seleccione las opciones más probables, resultando en respuestas deterministas y confiables. Temperaturas altas (1.5, 2.0) generan respuestas más creativas pero menos predecibles, inapropiado para servicio al cliente donde la consistencia es clave.
 
 ---
 
 ### Pregunta 3
-Estás usando Azure AI services en tu aplicación. ¿Cuál de las siguientes es la forma MÁS segura de autenticación?
+Un modelo de lenguaje genera la siguiente respuesta: "El Monte Everest está ubicado en Japón y tiene una altura de 12,000 metros." ¿Qué problema está demostrando este modelo?
 
-A) Incluir la subscription key directamente en el código  
-B) Usar Azure Active Directory (Azure AD)  
-C) Compartir la subscription key entre múltiples aplicaciones  
-D) Guardar la subscription key en un archivo de texto
+A) Baja temperatura  
+B) Alucinaciones (Hallucinations)  
+C) Falta de tokens  
+D) Contexto insuficiente
 
-**Respuesta correcta: B) Usar Azure Active Directory (Azure AD)**
+**Respuesta correcta: B) Alucinaciones (Hallucinations)**
 
-**Explicación**: Azure AD proporciona autenticación basada en tokens con capacidades de revocación, auditoría y control de acceso granular. Las subscription keys son menos seguras porque si se comprometen, tienes que regenerarlas. Nunca debes incluir keys en código o compartirlas indiscriminadamente (opciones A, C, D son malas prácticas).
+**Explicación**: Las **alucinaciones** ocurren cuando un modelo genera información falsa pero convincente. El Everest está en Nepal/Tibet (no Japón) y mide ~8,849 metros (no 12,000). El modelo está inventando "hechos" plausibles pero incorrectos. Esto es diferente de problemas de temperatura (controla creatividad), falta de tokens (límite de procesamiento), o contexto insuficiente (información de entrada limitada).
 
 ---
 
 ### Pregunta 4
-Una empresa de salud está desarrollando un chatbot para pacientes. El chatbot debe detectar si los usuarios comparten contenido relacionado con auto-daño para escalar a un profesional humano. ¿Qué servicio de Azure AI deberían usar?
+¿Qué son los "tokens" en el contexto de Large Language Models?
 
-A) Azure AI Language - Sentiment Analysis  
-B) Azure AI Content Safety  
-C) Azure AI Speech  
-D) Azure OpenAI Service
+A) Medidas de la calidad del modelo  
+B) Unidades básicas de procesamiento de texto  
+C) Nombres de los modelos de IA  
+D) Parámetros de configuración del modelo
 
-**Respuesta correcta: B) Azure AI Content Safety**
+**Respuesta correcta: B) Unidades básicas de procesamiento de texto**
 
-**Explicación**: Azure AI Content Safety está específicamente diseñado para detectar contenido dañino, incluyendo auto-daño, violencia, odio, etc. Aunque Sentiment Analysis (A) puede detectar emociones negativas, no está diseñado específicamente para identificar contenido peligroso que requiere moderación.
+**Explicación**: Los **tokens** son las unidades fundamentales en las que los LLMs dividen el texto para procesarlo. Una palabra puede ser uno o varios tokens dependiendo de su longitud y composición. Por ejemplo, "Hola" = 1 token, "Fantástico" = 2-3 tokens. Los tokens determinan los límites de procesamiento del modelo (context window) y los costos de uso. No son medidas de calidad, nombres de modelos, ni parámetros de configuración.
 
 ---
 
 ### Pregunta 5
-Tu equipo está entrenando un modelo de reconocimiento facial para un sistema de asistencia. Durante las pruebas, descubren que el modelo tiene menor precisión al identificar personas de ciertos grupos étnicos. ¿Qué principio de IA Responsable se está violando?
+Una empresa quiere usar IA generativa para crear descripciones únicas de productos basadas en especificaciones técnicas. ¿Cuál de los siguientes es un caso de uso apropiado para IA generativa?
 
-A) Accountability  
-B) Reliability & Safety  
-C) Fairness  
-D) Transparency
+A) Clasificar productos en categorías existentes  
+B) Predecir la demanda futura de productos  
+C) Generar textos descriptivos creativos y únicos para cada producto  
+D) Analizar sentimientos de reviews de clientes
 
-**Respuesta correcta: C) Fairness**
+**Respuesta correcta: C) Generar textos descriptivos creativos y únicos para cada producto**
 
-**Explicación**: Fairness (Equidad) requiere que los sistemas de IA traten a todas las personas de manera justa, sin sesgos basados en características como etnia, género, edad, etc. Un modelo con menor precisión para ciertos grupos étnicos muestra sesgo y viola el principio de fairness. La solución sería entrenar con datos más diversos y equilibrados.
+**Explicación**: La IA generativa es ideal para **crear contenido nuevo y original**, como descripciones de productos. Las otras opciones son tareas de IA tradicional: clasificación (A), predicción (B), y análisis de sentimientos (D) son tareas de IA predictiva/analítica que no requieren generar contenido nuevo, solo analizar y categorizar datos existentes.
 
 ---
 
 ## 📚 Tarea para mañana
 
-Mañana continuaremos con **Azure Machine Learning fundamentals** - workspace, compute, datasets y automated ML.
+Mañana profundizaremos en **Azure OpenAI Service**: deployment de modelos, APIs, Studio, y casos de uso prácticos.
 
 ---
 
@@ -267,7 +424,5 @@ Mañana continuaremos con **Azure Machine Learning fundamentals** - workspace, c
 
 ---
 
-**Preparado por:** Claude AI  
-**Para:** Renszo - Preparación AI-900  
 **Semana:** 5 de 6  
-**Próximo tema:** Azure Machine Learning Fundamentals
+**Próximo tema:** Azure OpenAI Service
