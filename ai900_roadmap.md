@@ -51,11 +51,11 @@ Semana 3: Computer Vision
 Semana 4: Natural Language Processing
   Lun 24 ✅ Fundamentos NLP
   Mar 25 ✅ Azure AI Language
-  Mié 26 📅 Translator + Speech
-  Jue 27 📅 Lab: Text Analytics
-  Vie 28 📅 Lab: Speech Services
-  Sáb 29 📅 Bots conversacionales
-  Dom 30 📅 Descanso
+  Mié 26 ✅ Translator + Speech
+  Jue 27 ✅ Lab: Text Analytics
+  Vie 28 ✅ Lab: Speech Services
+  Sáb 29 ✅ Bots conversacionales
+  Dom 30 ✅ Descanso
 
 DICIEMBRE 2025
 ─────────────────────────────────────────────────
