@@ -37,7 +37,7 @@
 | **Cumplimiento** | Básico | GDPR, HIPAA, ISO, SOC |
 | **SLA** | No garantizado | 99.9% disponibilidad |
 | **Redes privadas** | No disponible | Virtual Network, Private Link |
-| **Identidad** | API keys | Azure AD, Managed Identity |
+| **Identidad** | API keys | Entra ID/Azure AD, Managed Identity |
 | **Región de datos** | Global | Control de región específica |
 
 ### Ventajas de Azure OpenAI
@@ -458,7 +458,7 @@ api-key: {your-api-key}
 - No incluir en código fuente
 - Usar Azure Key Vault
 
-**Opción 2: Azure AD (Recomendado)**
+**Opción 2: Microsoft Entra ID/Azure AD (Recomendado)**
 - Autenticación basada en tokens
 - Integración con identidades corporativas
 - Mejor auditoría y control
@@ -557,7 +557,7 @@ api-key: {your-api-key}
 - **Deployment** = instancia específica de un modelo con nombre y capacidad
 - Azure OpenAI Studio = interfaz web para gestionar y probar modelos
 - **TPM (Tokens Per Minute)** define la capacidad del deployment
-- Autenticación: API keys, Azure AD, o Managed Identity
+- Autenticación: API keys, Entra ID/Azure AD, o Managed Identity
 - Content filters detectan y bloquean contenido dañino
 - Los datos del cliente NO se usan para reentrenar modelos
 - Facturación por tokens procesados (prompt + completion + reasoning en GPT-5)
@@ -630,12 +630,12 @@ D) Time Per Message (Tiempo Por Mensaje)
 
 A) Modelos más avanzados no disponibles en OpenAI  
 B) Acceso gratuito ilimitado  
-C) Integración nativa con Azure AD y Managed Identity  
+C) Integración nativa con Entra ID/Azure AD y Managed Identity  
 D) No requiere ningún tipo de autenticación
 
-**Respuesta correcta: C) Integración nativa con Azure AD y Managed Identity**
+**Respuesta correcta: C) Integración nativa con Entra ID/Azure AD y Managed Identity**
 
-**Explicación**: Azure OpenAI Service se integra con la infraestructura de seguridad de Azure, incluyendo Azure AD y Managed Identity, proporcionando mejor seguridad y control que solo API keys. Los modelos son los mismos que OpenAI (A es falso), no es gratis (B es falso), y SÍ requiere autenticación (D es falso). Otras ventajas incluyen SLA empresarial, cumplimiento regulatorio, y private endpoints.
+**Explicación**: Azure OpenAI Service se integra con la infraestructura de seguridad de Azure, incluyendo Entra ID/Azure AD y Managed Identity, proporcionando mejor seguridad y control que solo API keys. Los modelos son los mismos que OpenAI (A es falso), no es gratis (B es falso), y SÍ requiere autenticación (D es falso). Otras ventajas incluyen SLA empresarial, cumplimiento regulatorio, y private endpoints.
 
 ---
 
