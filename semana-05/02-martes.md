@@ -1,5 +1,4 @@
 # AI-900 Certification - Semana 5, Día 2
-
 ## Azure OpenAI Service
 
 **Fecha:** Martes, Semana 5  
@@ -54,11 +53,42 @@
 
 ## 2. Modelos Disponibles en Azure OpenAI
 
+### GPT-5 (Lanzado Agosto 2025) ⭐ MÁS RECIENTE
+
+**Características:**
+- Sistema unificado con router automático inteligente
+- Combina modelo rápido + modelo de razonamiento profundo (GPT-5 thinking)
+- 45% menos alucinaciones que GPT-4o
+- Context window: hasta 256K tokens (ChatGPT), 400K tokens (API)
+- Mejor en coding, matemáticas, escritura, salud, percepción visual
+
+**Variantes disponibles:**
+- **`gpt-5`** - Modelo principal (requiere registro para acceso)
+- **`gpt-5-mini`** - Versión ligera, económica y rápida
+- **`gpt-5-nano`** - Optimizado para baja latencia
+- **`gpt-5-chat`** - Conversaciones avanzadas, natural y multimodal
+
+**Casos de uso:**
+- Tareas complejas multi-paso
+- Generación de código de alta calidad con estética front-end
+- Análisis científico y matemático avanzado
+- Razonamiento profundo cuando se necesita máxima precisión
+- Agentes autónomos con uso de herramientas
+
+**Disponibilidad regional:**
+- East US 2 (Global Standard & Data Zones)
+- Sweden Central (Global Standard & Data Zones)
+- West Europe (Global Standard limitado)
+
+**Nota importante:** GPT-5 requiere **registro previo** para acceso al modelo base. Mini, nano y chat no requieren registro.
+
+---
+
 ### GPT-4 (Generative Pre-trained Transformer 4)
 
 **Características:**
-- Modelo más avanzado de OpenAI
-- Mejor razonamiento y comprensión
+- Modelo avanzado de generación anterior
+- Excelente razonamiento y comprensión
 - Capacidad multimodal (texto + imágenes en algunas versiones)
 - Context window: hasta 128K tokens
 
@@ -66,31 +96,39 @@
 - Análisis complejo de documentos
 - Generación de código avanzado
 - Razonamiento lógico
-- Tareas que requieren máxima precisión
+- Tareas que requieren alta precisión
 
 **Versiones comunes:**
 - `gpt-4` (8K context)
 - `gpt-4-32k` (32K context)
 - `gpt-4-turbo` (128K context)
+- `gpt-4o` (optimizado, multimodal)
+
+**Estado:** Aún ampliamente usado, pero GPT-5 lo supera en la mayoría de benchmarks.
+
+---
 
 ### GPT-3.5-Turbo
 
 **Características:**
 - Versión optimizada de GPT-3.5
-- Más rápido y económico que GPT-4
-- Excelente para la mayoría de tareas
+- Más rápido y económico que GPT-4 y GPT-5
+- Excelente para tareas rutinarias y de baja complejidad
 - Context window: 4K-16K tokens
 
 **Casos de uso:**
-- Chatbots conversacionales
-- Resumen de textos
+- Chatbots conversacionales básicos
+- Resumen de textos cortos
 - Traducción
 - Clasificación de texto
-- Q&A básico
+- Q&A simple
+- Uso masivo donde el costo es crítico
 
 **Versiones comunes:**
 - `gpt-35-turbo` (4K context)
 - `gpt-35-turbo-16k` (16K context)
+
+**Estado:** Ideal para casos de uso cost-sensitive donde GPT-5/GPT-4 no son necesarios.
 
 ### Embeddings
 
@@ -152,6 +190,8 @@ Suscripción de Azure
     └── Resource Group
         └── Azure OpenAI Resource
             └── Deployments (Modelos desplegados)
+                ├── gpt-5-deployment (requiere registro)
+                ├── gpt-5-mini-deployment
                 ├── gpt-4-deployment
                 ├── gpt-35-turbo-deployment
                 └── embeddings-deployment
@@ -173,12 +213,15 @@ Suscripción de Azure
   - Modelo base
   - Capacidad (TPM - Tokens Per Minute)
 
-**Ejemplo:**
+**Ejemplo con GPT-5:**
 ```
-Modelo: gpt-4
-Deployment name: "gpt4-production"
-Capacity: 10K TPM
+Modelo: gpt-5-mini
+Deployment name: "gpt5-mini-production"
+Capacity: 20K TPM
+Region: Sweden Central
 ```
+
+**Nota importante para GPT-5:** El modelo base `gpt-5` requiere registro previo. Los modelos `gpt-5-mini`, `gpt-5-nano` y `gpt-5-chat` no requieren registro y pueden desplegarse directamente.
 
 #### 3. Endpoint
 URL base para hacer llamadas API
@@ -200,11 +243,12 @@ https://{resource-name}.openai.azure.com/
 ### ¿Qué es?
 
 **Azure OpenAI Studio** es una interfaz web para:
-- Explorar modelos disponibles
+- Explorar modelos disponibles (incluyendo GPT-5)
 - Crear y probar deployments
 - Experimentar con prompts (Playground)
 - Ver uso y métricas
 - Gestionar content filters
+- Configurar el Model Router (para GPT-5)
 
 ### Secciones principales
 
@@ -213,8 +257,25 @@ https://{resource-name}.openai.azure.com/
 - Ver deployments existentes
 - Gestionar capacidad (TPM)
 - Eliminar deployments
+- **Nuevo:** Registrarse para acceso a GPT-5
 
-#### 2. Playground
+#### 2. Model Router (Nuevo con GPT-5)
+
+**¿Qué es?**
+Sistema inteligente que automáticamente selecciona el mejor modelo GPT-5 según la tarea:
+- **Modelo rápido** (`gpt-5-main`, `gpt-5-mini`) para consultas simples
+- **Modelo de razonamiento** (`gpt-5-thinking`) para problemas complejos
+
+**Beneficios:**
+- Optimización automática de costos (hasta 60% de ahorro)
+- Sin pérdida de calidad
+- No necesitas seleccionar manualmente el modelo
+- El router decide basándose en: complejidad, tipo de conversación, necesidad de herramientas
+
+**Cómo usarlo:**
+En Azure AI Foundry, al crear un deployment de GPT-5, el router está habilitado por defecto.
+
+#### 3. Playground
 
 **Chat Playground:**
 - Interfaz tipo chatbot
@@ -222,6 +283,7 @@ https://{resource-name}.openai.azure.com/
 - Ajustar parámetros (temperature, max tokens)
 - Probar conversaciones
 - Ver código de ejemplo (Python, C#, curl)
+- **Nuevo:** Probar GPT-5 thinking mode
 
 **Completions Playground:**
 - Modo de completación de texto
@@ -250,10 +312,12 @@ https://{resource-name}.openai.azure.com/
 
 ### Estructura básica de una llamada API
 
-#### Endpoint
+#### Endpoint (Ejemplo con GPT-5)
 ```
-POST https://{resource-name}.openai.azure.com/openai/deployments/{deployment-name}/chat/completions?api-version=2024-02-15-preview
+POST https://{resource-name}.openai.azure.com/openai/deployments/{deployment-name}/chat/completions?api-version=2024-08-01-preview
 ```
+
+**Nota:** GPT-5 usa una versión de API más reciente que GPT-4. Verifica la documentación para la versión exacta.
 
 #### Headers
 ```
@@ -261,7 +325,7 @@ Content-Type: application/json
 api-key: {your-api-key}
 ```
 
-#### Body (Request)
+#### Body (Request con GPT-5)
 ```json
 {
   "messages": [
@@ -276,9 +340,16 @@ api-key: {your-api-key}
   ],
   "max_tokens": 800,
   "temperature": 0.7,
-  "top_p": 0.95
+  "top_p": 0.95,
+  "reasoning_effort": "medium"
 }
 ```
+
+**Nuevo parámetro en GPT-5:**
+- **`reasoning_effort`**: Controla cuánto "piensa" el modelo
+  - `"low"` - Respuestas rápidas
+  - `"medium"` - Balance (default)
+  - `"high"` - Razonamiento profundo (usa GPT-5 thinking)
 
 #### Response
 ```json
@@ -296,10 +367,14 @@ api-key: {your-api-key}
   "usage": {
     "prompt_tokens": 25,
     "completion_tokens": 150,
-    "total_tokens": 175
+    "total_tokens": 175,
+    "reasoning_tokens": 0
   }
 }
 ```
+
+**Nuevo campo en usage:**
+- **`reasoning_tokens`**: Tokens usados en el proceso de razonamiento interno (GPT-5 thinking)
 
 ### Roles en mensajes
 
@@ -434,42 +509,81 @@ api-key: {your-api-key}
 
 **Pay-per-use (Pago por uso):**
 - Se cobra por tokens procesados
-- Separado: prompt tokens + completion tokens
+- Separado: prompt tokens + completion tokens + reasoning tokens (GPT-5)
 - Varía según modelo
 
-**Ejemplos aproximados (precios referenciales):**
-- GPT-4: ~$0.03/1K prompt tokens, ~$0.06/1K completion tokens
-- GPT-3.5-turbo: ~$0.0015/1K prompt tokens, ~$0.002/1K completion tokens
-- Embeddings: ~$0.0001/1K tokens
+**Ejemplos aproximados (precios referenciales USD):**
+- **GPT-5**: ~$0.04/1K prompt tokens, ~$0.08/1K completion tokens, reasoning tokens adicionales
+- **GPT-5-mini**: ~$0.002/1K prompt tokens, ~$0.004/1K completion tokens
+- **GPT-5-nano**: ~$0.001/1K prompt tokens, ~$0.002/1K completion tokens
+- **GPT-4**: ~$0.03/1K prompt tokens, ~$0.06/1K completion tokens
+- **GPT-3.5-turbo**: ~$0.0015/1K prompt tokens, ~$0.002/1K completion tokens
+- **Embeddings**: ~$0.0001/1K tokens
+
+**Nota importante:** GPT-5 incluye **reasoning tokens** cuando usa el modo thinking. Estos se cobran aparte y pueden aumentar el costo total, pero ofrecen mayor precisión.
 
 ### Optimización de Costos
 
-1. **Usar el modelo apropiado**: GPT-3.5 cuando GPT-4 no sea necesario
-2. **Limitar max_tokens**: No generar más de lo necesario
-3. **Cachear respuestas**: Para preguntas frecuentes
-4. **Resumir contexto**: Mantener conversaciones más cortas
-5. **Batch processing**: Agrupar solicitudes cuando sea posible
+1. **Usar el modelo apropiado**: 
+   - GPT-5-nano para tareas simples y latencia crítica
+   - GPT-5-mini para balance costo-calidad
+   - GPT-5 solo cuando necesites máxima precisión o razonamiento complejo
+
+2. **Aprovechar el Model Router**: 
+   - Deja que Azure decida automáticamente
+   - Ahorra hasta 60% sin pérdida de calidad
+
+3. **Limitar max_tokens**: No generar más de lo necesario
+
+4. **Controlar reasoning_effort**: 
+   - Usa "low" para consultas simples
+   - "high" solo cuando realmente lo necesites
+
+5. **Cachear respuestas**: Para preguntas frecuentes
+
+6. **Resumir contexto**: Mantener conversaciones más cortas
+
+7. **Batch processing**: Agrupar solicitudes cuando sea posible
 
 ---
 
 ## ✅ Puntos Clave para el Examen
 
 - Azure OpenAI Service proporciona acceso a modelos OpenAI con seguridad empresarial de Azure
-- Modelos principales: GPT-4, GPT-3.5-turbo, Embeddings, DALL-E, Whisper
+- **GPT-5** es el modelo más reciente (agosto 2025) con sistema de router inteligente y menor tasa de alucinaciones
+- Modelos principales: **GPT-5 (y variantes mini/nano/chat)**, GPT-4, GPT-3.5-turbo, Embeddings, DALL-E, Whisper
+- **GPT-5 requiere registro** para el modelo base; mini, nano y chat no requieren registro
+- **Model Router** en GPT-5 optimiza automáticamente entre velocidad y razonamiento profundo
 - **Deployment** = instancia específica de un modelo con nombre y capacidad
 - Azure OpenAI Studio = interfaz web para gestionar y probar modelos
 - **TPM (Tokens Per Minute)** define la capacidad del deployment
 - Autenticación: API keys, Azure AD, o Managed Identity
 - Content filters detectan y bloquean contenido dañino
 - Los datos del cliente NO se usan para reentrenar modelos
-- Facturación por tokens procesados (prompt + completion)
+- Facturación por tokens procesados (prompt + completion + reasoning en GPT-5)
 - System message define el comportamiento general del asistente
+- **reasoning_effort** (GPT-5): controla nivel de razonamiento (low/medium/high)
+- Disponibilidad regional de GPT-5: East US 2, Sweden Central principalmente
 
 ---
 
 ## 🎯 Preguntas Estilo Examen Microsoft AI-900
 
 ### Pregunta 1
+¿Cuál es la principal ventaja del sistema de "Model Router" introducido con GPT-5 en Azure OpenAI Service?
+
+A) Permite usar múltiples modelos GPT al mismo tiempo  
+B) Selecciona automáticamente entre modelo rápido y de razonamiento según la complejidad de la tarea  
+C) Reduce el costo de todos los tokens a la mitad  
+D) Elimina la necesidad de configurar deployments
+
+**Respuesta correcta: B) Selecciona automáticamente entre modelo rápido y de razonamiento según la complejidad de la tarea**
+
+**Explicación**: El **Model Router** de GPT-5 es un sistema inteligente que evalúa cada prompt y decide automáticamente si usar el modelo rápido (gpt-5-main/mini) para consultas simples o el modelo de razonamiento profundo (gpt-5-thinking) para problemas complejos. Esto optimiza tanto el rendimiento como los costos (hasta 60% de ahorro) sin requerir intervención manual. No permite usar modelos simultáneamente (A), no reduce costos a la mitad automáticamente (C), y los deployments siguen siendo necesarios (D).
+
+---
+
+### Pregunta 2
 Tu empresa quiere usar modelos GPT para un chatbot de servicio al cliente, pero requiere que los datos permanezcan en Europa por GDPR. ¿Qué servicio deberías usar?
 
 A) OpenAI API directamente (openai.com)  
@@ -479,11 +593,11 @@ D) Azure Bot Service sin modelos de lenguaje
 
 **Respuesta correcta: B) Azure OpenAI Service desplegado en región de Europa**
 
-**Explicación**: Azure OpenAI Service permite seleccionar la región de Azure donde se despliega el recurso, asegurando que los datos permanezcan en esa geografía (ej: West Europe, North Europe). Esto cumple con GDPR. OpenAI API directa (A) no ofrece este control de región. Azure AI Language (C) no proporciona acceso a modelos GPT. Azure Bot Service (D) necesita un backend de lenguaje.
+**Explicación**: Azure OpenAI Service permite seleccionar la región de Azure donde se despliega el recurso, asegurando que los datos permanezcan en esa geografía (ej: West Europe, Sweden Central). Esto cumple con GDPR. OpenAI API directa (A) no ofrece este control de región. Azure AI Language (C) no proporciona acceso a modelos GPT. Azure Bot Service (D) necesita un backend de lenguaje.
 
 ---
 
-### Pregunta 2
+### Pregunta 3
 En Azure OpenAI Studio, estás configurando un chatbot. Quieres que el asistente siempre responda como un experto en finanzas. ¿Qué rol de mensaje deberías usar para esto?
 
 A) user  
@@ -497,8 +611,8 @@ D) function
 
 ---
 
-### Pregunta 3
-Estás desplegando GPT-4 en Azure OpenAI. Configuras el deployment con 10K TPM. ¿Qué significa TPM?
+### Pregunta 4
+Estás desplegando GPT-5 en Azure OpenAI. Configuras el deployment con 20K TPM. ¿Qué significa TPM?
 
 A) Transactions Per Month (Transacciones por Mes)  
 B) Tokens Per Minute (Tokens Por Minuto)  
@@ -507,11 +621,11 @@ D) Time Per Message (Tiempo Por Mensaje)
 
 **Respuesta correcta: B) Tokens Per Minute (Tokens Por Minuto)**
 
-**Explicación**: **TPM (Tokens Per Minute)** es la capacidad asignada a un deployment que define cuántos tokens puede procesar por minuto. 10K TPM significa que puede procesar 10,000 tokens cada minuto. Si excedes este límite, recibirás un error 429 (rate limit). Esta métrica es fundamental para planificar capacidad y costos.
+**Explicación**: **TPM (Tokens Per Minute)** es la capacidad asignada a un deployment que define cuántos tokens puede procesar por minuto. 20K TPM significa que puede procesar 20,000 tokens cada minuto. Si excedes este límite, recibirás un error 429 (rate limit). Esta métrica es fundamental para planificar capacidad y costos.
 
 ---
 
-### Pregunta 4
+### Pregunta 5
 ¿Cuál de las siguientes es una ventaja de Azure OpenAI Service sobre usar OpenAI API directamente?
 
 A) Modelos más avanzados no disponibles en OpenAI  
@@ -525,17 +639,17 @@ D) No requiere ningún tipo de autenticación
 
 ---
 
-### Pregunta 5
-Estás usando Azure OpenAI para generar respuestas de un chatbot médico. Necesitas que las respuestas sean muy consistentes y predecibles, evitando variaciones creativas. ¿Qué configuración deberías usar?
+### Pregunta 6
+Necesitas que GPT-5 realice razonamiento profundo para resolver un problema matemático complejo. ¿Qué parámetro debes configurar?
 
-A) Temperature = 0.0, Top_p = 0.1  
-B) Temperature = 1.5, Top_p = 1.0  
-C) Temperature = 2.0, Top_p = 0.5  
-D) Frequency_penalty = 2.0, Presence_penalty = 2.0
+A) temperature = 2.0  
+B) reasoning_effort = "high"  
+C) max_tokens = 10000  
+D) top_p = 0.1
 
-**Respuesta correcta: A) Temperature = 0.0, Top_p = 0.1**
+**Respuesta correcta: B) reasoning_effort = "high"**
 
-**Explicación**: Para respuestas **consistentes y predecibles**, necesitas valores **bajos** de temperature y top_p. Temperature = 0.0 hace que el modelo siempre seleccione la opción más probable (determinista). Top_p = 0.1 limita las opciones consideradas. Las opciones B y C tienen valores altos que generan respuestas creativas y variadas (inadecuado para información médica). La opción D penaliza repetición pero no controla consistencia.
+**Explicación**: El parámetro **reasoning_effort** es específico de GPT-5 y controla cuánto "piensa" el modelo antes de responder. Configurarlo en "high" activa el modo GPT-5 thinking para razonamiento profundo. Temperature (A) controla aleatoriedad no razonamiento, max_tokens (C) solo limita la longitud de salida, y top_p (D) afecta la diversidad de tokens seleccionados pero no activa razonamiento profundo.
 
 ---
 
