@@ -41,7 +41,7 @@ Semana 2: Machine Learning en profundidad
 
 Semana 3: Computer Vision
   Lun 17 ✅ Fundamentos CV
-  Mar 18 ✅ Fzure AI Vision
+  Mar 18 ✅ Azure AI Vision
   Mié 19 ✅ Face API + OCR
   Jue 20 ✅ Custom Vision
   Vie 21 ✅ Lab: Analizar imágenes
