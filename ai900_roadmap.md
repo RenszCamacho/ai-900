@@ -60,9 +60,9 @@ Semana 4: Natural Language Processing
 DICIEMBRE 2025
 ─────────────────────────────────────────────────
 Semana 5: Generative AI + Responsible AI
-  Lun 1  📅 IA Generativa intro
-  Mar 2  📅 Azure OpenAI Service
-  Mié 3  📅 Prompts y tokens
+  Lun 1  ✅ IA Generativa intro
+  Mar 2  ✅ Azure OpenAI Service
+  Mié 3  ✅ Prompts y tokens
   Jue 4  📅 Responsible AI ⭐
   Vie 5  📅 Content filters
   Sáb 6  📅 Mega repaso general
