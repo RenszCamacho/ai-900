@@ -818,10 +818,11 @@ B) Accountability
 C) Fairness  
 D) Privacy & Security
 
+<details>
 **Respuesta correcta: C) Fairness**
 
 **Explicación**: **Fairness (Equidad)** requiere que los sistemas de IA traten a todas las personas de manera justa sin discriminación. Una diferencia de 20% en precisión entre grupos étnicos constituye sesgo y discriminación. Para corregirlo, se debe entrenar con un dataset más diverso y balanceado. Transparency (A) es sobre explicar funcionamiento, Accountability (B) sobre responsabilidad humana, y Privacy (D) sobre protección de datos.
-
+</details>
 ---
 
 ### Pregunta 2
