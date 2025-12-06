@@ -903,8 +903,6 @@ B) Hate, Sexual, Violence, Self-Harm
 C) Political, Religious, Controversial, Offensive  
 D) Personal Data, Financial, Medical, Legal
 
-**Respuesta correcta: B) Hate, Sexual, Violence, Self-Harm**
-
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
 
@@ -924,8 +922,6 @@ A) Low - para máxima flexibilidad
 B) Medium - configuración balanceada  
 C) High - máxima protección  
 D) Desactivar filtros para mejor experiencia
-
-**Respuesta correcta: C) High - máxima protección**
 
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
@@ -947,8 +943,6 @@ B) Few-shot learning
 C) Jailbreaking  
 D) Chain-of-thought reasoning
 
-**Respuesta correcta: C) Jailbreaking**
-
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
 
@@ -968,8 +962,6 @@ A) Solo antes de enviar el prompt al modelo (input filtering)
 B) Solo después de que el modelo genera la respuesta (output filtering)  
 C) Tanto en el input como en el output  
 D) Los content filters no están disponibles en Azure OpenAI
-
-**Respuesta correcta: C) Tanto en el input como en el output**
 
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
@@ -991,8 +983,6 @@ B) Se excedió el límite de tokens
 C) El contenido fue bloqueado por violar políticas de seguridad  
 D) La API key es inválida
 
-**Respuesta correcta: C) El contenido fue bloqueado por violar políticas de seguridad**
-
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
 
@@ -1012,8 +1002,6 @@ A) Low (bajo)
 B) Medium (medio)  
 C) High (alto)  
 D) Los filtros están desactivados por defecto
-
-**Respuesta correcta: B) Medium (medio)**
 
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
@@ -1035,8 +1023,6 @@ B) Usar solo el nivel Low
 C) Configurar una Allowed List (lista de términos permitidos)  
 D) No hay solución, deben evitar esos términos
 
-**Respuesta correcta: C) Configurar una Allowed List (lista de términos permitidos)**
-
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
 
@@ -1056,8 +1042,6 @@ A) Contenido violento que no es detectado y bloqueado
 B) Artículo médico educativo bloqueado por contener terminología anatómica  
 C) Discurso de odio correctamente identificado y bloqueado  
 D) El sistema funciona perfectamente sin errores
-
-**Respuesta correcta: B) Artículo médico educativo bloqueado por contener terminología anatómica**
 
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
@@ -1079,8 +1063,6 @@ B) Low (2)
 C) Medium (4)  
 D) High (6)
 
-**Respuesta correcta: D) High (6)**
-
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
 
@@ -1100,8 +1082,6 @@ A) Fairness
 B) Privacy & Security  
 C) Transparency  
 D) Inclusiveness
-
-**Respuesta correcta: B) Privacy & Security**
 
 <details>
 <summary>👉 Ver respuesta y explicación</summary>
