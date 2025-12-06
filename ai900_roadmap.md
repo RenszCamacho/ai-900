@@ -63,10 +63,10 @@ Semana 5: Generative AI + Responsible AI
   Lun 1  ✅ IA Generativa intro
   Mar 2  ✅ Azure OpenAI Service
   Mié 3  ✅ Prompts y tokens
-  Jue 4  📅 Responsible AI ⭐
-  Vie 5  📅 Content filters
-  Sáb 6  📅 Mega repaso general
-  Dom 7  📅 Resolver dudas
+  Jue 4  ✅ Responsible AI ⭐
+  Vie 5  ✅ Content filters
+  Sáb 6  ✅ Mega repaso general
+  Dom 7  📅 Azure AI Foundry (Antes Azure AI Studio)
 
 Semana 6: Preparación final y examen
   Lun 8  📅 Revisión completa
@@ -562,6 +562,7 @@ Semana 6: Preparación final y examen
 **Contenido y lab:**
 
 1. **Teoría (1h):**
+
    - Qué es Question Answering
    - Qué es Bot Service
    - Arquitectura de un bot
@@ -678,28 +679,33 @@ Semana 6: Preparación final y examen
 **Contenido - LOS 6 PRINCIPIOS (MEMORIZA):**
 
 1. **Fairness (Equidad)**
+
    - Sin sesgos hacia grupos
    - Tratamiento justo para todos
    - Ejemplo: sistema de préstamos sin discriminar por género/raza
 
 2. **Reliability & Safety (Confiabilidad y Seguridad)**
+
    - Funciona consistentemente
    - Seguro ante diferentes situaciones
    - Maneja errores adecuadamente
    - Ejemplo: coche autónomo debe ser seguro siempre
 
 3. **Privacy & Security (Privacidad y Seguridad)**
+
    - Proteger datos personales
    - Cumplir regulaciones (GDPR)
    - Encriptación
    - Ejemplo: datos médicos protegidos
 
 4. **Inclusiveness (Inclusividad)**
+
    - Accesible para personas con discapacidades
    - Funciona para todos los usuarios
    - Ejemplo: reconocimiento de voz para personas con problemas motores
 
 5. **Transparency (Transparencia)**
+
    - Explicable cómo funciona
    - Usuarios entienden las decisiones
    - Documentación clara
@@ -1457,25 +1463,30 @@ Has recibido un plan completo y detallado para las próximas 6 semanas. Este pla
 **Recuerda:**
 
 1. **Consistencia > Intensidad**
+
    - 1.5h diarias es mejor que 10h el domingo
    - Tu cerebro necesita tiempo para procesar
 
 2. **Las flashcards son TU MEJOR AMIGA**
+
    - Repásalas TODOS los días
    - 5-10 minutos mientras desayunas
    - Son la clave del éxito
 
 3. **Los labs son esenciales**
+
    - No solo leas, HAZ
    - Te sentirás perdido al principio, ES NORMAL
    - Aprenderás haciendo
 
 4. **Responsible AI sale SÍ O SÍ**
+
    - Memoriza los 6 principios
    - Entiende ejemplos de cada uno
    - Repásalos antes del examen
 
 5. **Los practice tests son críticos**
+
    - Mínimo 3 tests completos
    - Cronométrate siempre
    - Aprende de tus errores
