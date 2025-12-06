@@ -2,409 +2,325 @@
 
 ## Mega Repaso General 🎯
 
-**Fecha:** Sábado, Semana 5
-
-### Pregunta 1
-
-¿Cuál de los siguientes es un ejemplo de Supervised Learning?
-
-A) Agrupar clientes por comportamiento de compra  
-B) Predecir precio de una casa basándose en características  
-C) Robot aprendiendo a caminar mediante prueba y error  
-D) Detectar patrones anómalos en datos sin etiquetas
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: B) Predecir precio de una casa basándose en características**
-
-**Explicación**: Supervised Learning requiere datos etiquetados (labels). Predecir precio de casa es **regresión** (supervised) porque entrenas con ejemplos conocidos (casa + precio). A es Unsupervised (clustering), C es Reinforcement Learning, D es Unsupervised (anomaly detection).
-
-</details>
+**Fecha:** Sábado, Semana 5  
+**Duración estimada:** 2-3 horas  
+**Nivel:** Repaso completo
 
 ---
 
-### Pregunta 2
+## 📋 Objetivo del día
 
-Un modelo de clasificación binaria tiene: TP=80, TN=60, FP=15, FN=10. ¿Cuál es el Recall?
+Consolidar **TODO** el conocimiento de las 5 semanas de estudio:
 
-A) 75.8%  
-B) 84.2%  
-C) 88.9%  
-D) 80.0%
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: C) 88.9%**
-
-**Explicación**: Recall = TP / (TP + FN) = 80 / (80 + 10) = 80/90 = 0.889 = 88.9%. Recall mide: de los positivos reales, cuántos detectamos.
-
-</details>
+- Semana 1: Fundamentos de IA
+- Semana 2: Machine Learning
+- Semana 3: Computer Vision
+- Semana 4: Natural Language Processing
+- Semana 5: Generative AI + Responsible AI
 
 ---
 
-### Pregunta 3
+## 🗂️ Índice de Repaso
 
-¿Qué servicio de Azure AI permite extraer texto de imágenes y documentos?
-
-A) Face API  
-B) Custom Vision  
-C) Read API (OCR)  
-D) Video Indexer
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: C) Read API (OCR)**
-
-**Explicación**: Read API (parte de Azure AI Vision) es específicamente para **OCR** (Optical Character Recognition) - extraer texto impreso o manuscrito de imágenes y PDFs. Face API (A) es para rostros, Custom Vision (B) para modelos personalizados, Video Indexer (D) para análisis de video.
-
-</details>
+1. [Fundamentos de IA](#1-fundamentos-de-ia)
+2. [Machine Learning](#2-machine-learning)
+3. [Azure Machine Learning](#3-azure-machine-learning)
+4. [Computer Vision](#4-computer-vision)
+5. [Natural Language Processing](#5-natural-language-processing)
+6. [Generative AI](#6-generative-ai)
+7. [Azure OpenAI Service](#7-azure-openai-service)
+8. [Responsible AI](#8-responsible-ai)
+9. [Content Filters](#9-content-filters)
+10. [Conceptos Transversales](#10-conceptos-transversales)
 
 ---
 
-### Pregunta 4
+## 1. Fundamentos de IA
 
-¿Qué capacidad de Azure AI Language identifica entidades como personas, lugares y organizaciones en texto?
+### ¿Qué es Inteligencia Artificial?
 
-A) Sentiment Analysis  
-B) Key Phrase Extraction  
-C) Named Entity Recognition (NER)  
-D) Language Detection
+**Definición:** Sistemas que simulan inteligencia humana para realizar tareas que normalmente requieren cognición humana.
 
-<details>
-<summary>Respuesta y explicación</summary>
+### Tipos de IA
 
-**Respuesta: C) Named Entity Recognition (NER)**
+| Tipo                     | Descripción                  | Ejemplo               |
+| ------------------------ | ---------------------------- | --------------------- |
+| **IA Débil (Narrow AI)** | Específica para una tarea    | Reconocimiento facial |
+| **IA General (AGI)**     | Inteligencia humana completa | No existe aún         |
+| **IA Super**             | Supera inteligencia humana   | Ciencia ficción       |
 
-**Explicación**: **NER** identifica y clasifica entidades nombradas (personas, lugares, organizaciones, fechas, etc.). Sentiment Analysis (A) detecta emociones, Key Phrases (B) extrae temas principales, Language Detection (D) identifica el idioma.
+### Categorías de workloads de IA
 
-</details>
+**1. Machine Learning (ML)**
 
----
+- Aprender de datos sin programación explícita
+- Tipos: Supervisado, No supervisado, Refuerzo
 
-### Pregunta 5
+**2. Computer Vision**
 
-¿Cuál es la principal diferencia entre IA Tradicional e IA Generativa?
+- Análisis e interpretación de imágenes/video
+- Ejemplos: Detección de objetos, OCR, análisis facial
 
-A) IA Generativa es más rápida  
-B) IA Tradicional solo funciona con texto  
-C) IA Generativa crea contenido nuevo, IA Tradicional analiza y predice  
-D) IA Generativa no requiere entrenamiento
+**3. Natural Language Processing (NLP)**
 
-<details>
-<summary>Respuesta y explicación</summary>
+- Procesamiento y comprensión de lenguaje humano
+- Ejemplos: Traducción, análisis de sentimiento, chatbots
 
-**Respuesta: C) IA Generativa crea contenido nuevo, IA Tradicional analiza y predice**
+**4. Generative AI**
 
-**Explicación**: La diferencia fundamental: **IA Tradicional** (clasificación, regresión) analiza datos existentes para predecir/clasificar. **IA Generativa** crea contenido original (texto, imágenes, código). Las otras opciones son incorrectas.
-
-</details>
+- Creación de contenido nuevo
+- Ejemplos: GPT (texto), DALL-E (imágenes)
 
 ---
 
-### Pregunta 6
+## 2. Machine Learning
 
-Aproximadamente, ¿cuántos caracteres equivalen a 1 token en inglés para modelos GPT?
+### Tipos de Machine Learning
 
-A) 1 carácter  
-B) 4 caracteres  
-C) 10 caracteres  
-D) 20 caracteres
+#### Supervised Learning (Aprendizaje Supervisado)
 
-<details>
-<summary>Respuesta y explicación</summary>
+**Características:**
 
-**Respuesta: B) 4 caracteres**
+- Datos etiquetados (labels)
+- Aprende de ejemplos conocidos
+- Objetivo: predecir labels de datos nuevos
 
-**Explicación**: La regla general es **1 token ≈ 4 caracteres** en inglés, o aproximadamente 0.75 palabras. En español puede ser 3-4 caracteres por token debido a acentos y estructura del idioma.
+**Tipos principales:**
 
-</details>
+**Regresión:**
 
----
+- Predice valores numéricos continuos
+- Ejemplo: Predecir precio de casa ($250,000)
+- Algoritmos: Linear Regression, Decision Trees
 
-### Pregunta 7
+**Clasificación:**
 
-¿Qué principio de Responsible AI requiere que un sistema de IA funcione de manera compatible con lectores de pantalla para personas con discapacidad visual?
+- Predice categorías/clases
+- **Binaria**: 2 clases (spam/no spam)
+- **Multiclase**: 3+ clases (perro/gato/pájaro)
+- Algoritmos: Logistic Regression, Random Forest, SVM
 
-A) Fairness  
-B) Transparency  
-C) Inclusiveness  
-D) Accountability
+#### Unsupervised Learning (Aprendizaje No Supervisado)
 
-<details>
-<summary>Respuesta y explicación</summary>
+**Características:**
 
-**Respuesta: C) Inclusiveness**
+- Datos NO etiquetados
+- Encuentra patrones ocultos
+- No hay "respuesta correcta"
 
-**Explicación**: **Inclusiveness** requiere que sistemas de IA sean accesibles para TODOS, incluyendo personas con discapacidades. Compatibilidad con lectores de pantalla es accesibilidad. Fairness (A) es sobre trato equitativo, Transparency (B) sobre explicabilidad, Accountability (D) sobre responsabilidad.
+**Tipos:**
 
-</details>
+**Clustering:**
 
----
+- Agrupa datos similares
+- Ejemplo: Segmentación de clientes
+- Algoritmo: K-Means
 
-### Pregunta 8
+#### Reinforcement Learning (Aprendizaje por Refuerzo)
 
-¿Cuáles son las 4 categorías de contenido dañino que Azure AI Content Safety detecta?
+**Características:**
 
-A) Spam, Phishing, Malware, Scam  
-B) Hate, Sexual, Violence, Self-Harm  
-C) Political, Religious, Personal, Financial  
-D) Adult, Racy, Gory, Medical
+- Agente aprende mediante prueba y error
+- Recibe recompensas/penalizaciones
+- Ejemplo: AlphaGo, vehículos autónomos
 
-<details>
-<summary>Respuesta y explicación</summary>
+### Métricas de Evaluación
 
-**Respuesta: B) Hate, Sexual, Violence, Self-Harm**
+#### Para Regresión:
 
-**Explicación**: Las **4 categorías principales** son: **Hate** (odio), **Sexual**, **Violence** (violencia), y **Self-Harm** (auto-daño). Cada una tiene niveles de severidad: Safe (0), Low (2), Medium (4), High (6).
+**MAE (Mean Absolute Error):**
 
-</details>
+- Promedio de errores absolutos
+- Fórmula: `MAE = (1/n) Σ|actual - predicted|`
+- Menor es mejor
 
----
+**MSE (Mean Squared Error):**
 
-### Pregunta 9
+- Penaliza errores grandes más fuertemente
+- Fórmula: `MSE = (1/n) Σ(actual - predicted)²`
 
-Estás configurando Azure OpenAI para una aplicación de chatbot empresarial. Configuras 50K TPM. ¿Qué significa TPM?
+**R² (R-squared):**
 
-A) Total Processing Memory  
-B) Tokens Per Minute  
-C) Time Per Message  
-D) Transactions Per Month
+- Qué tan bien el modelo explica la varianza
+- Rango: 0 a 1 (1 = perfecto)
 
-<details>
-<summary>Respuesta y explicación</summary>
+#### Para Clasificación:
 
-**Respuesta: B) Tokens Per Minute**
+**Accuracy (Precisión):**
 
-**Explicación**: **TPM (Tokens Per Minute)** define la capacidad de procesamiento de un deployment. 50K TPM = 50,000 tokens por minuto. Si excedes este límite, recibes error 429 (rate limiting).
+- % predicciones correctas
+- Fórmula: `(TP + TN) / Total`
+- Problema: Misleading con datos desbalanceados
 
-</details>
+**Precision:**
 
----
+- De las predicciones positivas, cuántas son correctas
+- Fórmula: `TP / (TP + FP)`
+- Importante cuando FP es costoso
 
-### Pregunta 10
+**Recall (Sensibilidad):**
 
-¿Qué técnica de prompt engineering proporciona ejemplos al modelo antes de la solicitud real?
+- De los positivos reales, cuántos detectamos
+- Fórmula: `TP / (TP + FN)`
+- Importante cuando FN es costoso
 
-A) Zero-shot prompting  
-B) Few-shot prompting  
-C) Role prompting  
-D) Chain-of-thought
+**F1-Score:**
 
-<details>
-<summary>Respuesta y explicación</summary>
+- Media armónica de Precision y Recall
+- Fórmula: `2 × (Precision × Recall) / (Precision + Recall)`
+- Balance entre ambos
 
-**Respuesta: B) Few-shot prompting**
+**Confusion Matrix:**
 
-**Explicación**: **Few-shot** proporciona 2-5 ejemplos antes de la tarea real para que el modelo aprenda el patrón. Zero-shot (A) no usa ejemplos, Role prompting (C) asigna personalidad, Chain-of-thought (D) pide razonamiento paso a paso.
-
-</details>
-
----
-
-### Pregunta 11
-
-Un modelo de reconocimiento facial tiene 90% precisión en personas de piel clara pero 65% en personas de piel oscura. ¿Qué principio se viola?
-
-A) Transparency  
-B) Fairness  
-C) Privacy  
-D) Reliability
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: B) Fairness**
-
-**Explicación**: **Fairness** requiere trato equitativo sin discriminación por características como etnia. 25% de diferencia en precisión es sesgo racial. Solución: entrenar con dataset más diverso y balanceado.
-
-</details>
+```
+                Predicted
+              Pos    Neg
+Actual  Pos   TP     FN
+        Neg   FP     TN
+```
 
 ---
 
-### Pregunta 12
+## 3. Azure Machine Learning
 
-¿Qué herramienta de Microsoft se usa para evaluar y mitigar sesgos en modelos ML?
+### Componentes Principales
 
-A) InterpretML  
-B) Azure Monitor  
-C) Fairlearn  
-D) Error Analysis
+**1. Workspace:**
 
-<details>
-<summary>Respuesta y explicación</summary>
+- Recurso top-level en Azure
+- Contiene todos los assets de ML
+- Centraliza experimentos, modelos, datos
 
-**Respuesta: C) Fairlearn**
+**2. Compute:**
 
-**Explicación**: **Fairlearn** es específicamente para evaluar fairness (equidad) y mitigar sesgos. InterpretML (A) es para explicabilidad, Azure Monitor (B) para observabilidad, Error Analysis (D) para identificar errores.
+- **Compute Instances**: VM para desarrollo/notebooks
+- **Compute Clusters**: Clusters escalables para entrenamiento
+- **Inference Clusters**: Para despliegue de modelos (AKS)
 
-</details>
+**3. Datasets:**
 
----
+- Referencia a datos de entrenamiento
+- Versionados y rastreables
+- Pueden ser tabulares o archivos
 
-### Pregunta 13
+**4. Experiments:**
 
-¿Qué configuración de content filter debes usar para una aplicación educativa dirigida a niños de 10 años?
+- Agrupación de training runs
+- Tracking de métricas y parámetros
 
-A) Low  
-B) Medium  
-C) High  
-D) Desactivar filtros
+**5. Models:**
 
-<details>
-<summary>Respuesta y explicación</summary>
+- Modelo entrenado registrado
+- Versionado
+- Puede desplegarse como servicio web
 
-**Respuesta: C) High**
+**6. Pipelines:**
 
-**Explicación**: Para **menores de edad**, siempre usar **High** (máxima protección). Bloquea Low, Medium y High severity, permitiendo solo Safe (0). Medium (B) es insuficiente, Low (A) es inapropiado, y desactivar (D) no es posible en Azure OpenAI.
+- Workflow de pasos ML
+- Reproducible y reutilizable
+- Ejemplo: Preparar datos → Entrenar → Evaluar
 
-</details>
+### Azure Machine Learning Studio
 
----
+**Interfaz web** para:
 
-### Pregunta 14
+- Crear y gestionar recursos
+- Designer (ML visual, drag-and-drop)
+- Automated ML (AutoML)
+- Notebooks
 
-¿Qué modelo de Azure OpenAI debes usar para transcribir audio a texto?
+### Automated Machine Learning (AutoML)
 
-A) GPT-4  
-B) DALL-E  
-C) Whisper  
-D) text-embedding-ada-002
+**¿Qué es?**
 
-<details>
-<summary>Respuesta y explicación</summary>
+- Automatiza selección de algoritmo y hiperparámetros
+- Prueba múltiples modelos automáticamente
+- Selecciona el mejor basándose en métrica objetivo
 
-**Respuesta: C) Whisper**
+**Tipos de tareas:**
 
-**Explicación**: **Whisper** es el modelo para **speech-to-text** (transcripción de audio). GPT-4 (A) es para texto/chat, DALL-E (B) para imágenes, embeddings (D) para vectores numéricos.
+- Classification
+- Regression
+- Time-series forecasting
 
-</details>
+**Pasos:**
 
----
+1. Seleccionar dataset
+2. Elegir tipo de tarea (classification/regression/forecasting)
+3. Seleccionar métrica objetivo (accuracy, AUC, R², etc.)
+4. Configurar constraints (tiempo, iteraciones)
+5. Ejecutar
+6. Revisar mejor modelo
 
-### Pregunta 15
+**Beneficios:**
 
-Un sistema de aprobación de préstamos debe explicar por qué un préstamo fue rechazado. ¿Qué principio de Responsible AI requiere esta explicación?
-
-A) Fairness  
-B) Transparency  
-C) Accountability  
-D) Privacy
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: B) Transparency**
-
-**Explicación**: **Transparency** incluye **explicabilidad** - usuarios deben entender por qué el sistema tomó cierta decisión. Esto es además un requisito legal en muchos países para decisiones financieras.
-
-</details>
-
----
-
-### Pregunta 16
-
-¿Cuál es la configuración predeterminada de content filters en Azure OpenAI?
-
-A) Low  
-B) Medium  
-C) High  
-D) Sin filtros
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: B) Medium**
-
-**Explicación**: La configuración **default es Medium**, que bloquea Medium (4) y High (6), permitiendo Safe (0) y Low (2). Balance entre protección y usabilidad.
-
-</details>
+- No requiere expertise profundo en ML
+- Experimenta con múltiples algoritmos
+- Feature engineering automático
+- Ahorra tiempo
 
 ---
 
-### Pregunta 17
+## 4. Computer Vision
 
-¿Qué método de autenticación es el MÁS seguro para Azure OpenAI Service?
+### Servicios de Azure AI Vision
 
-A) API Keys incluidas en el código  
-B) Microsoft Entra ID (Azure AD)  
-C) Compartir API key entre múltiples apps  
-D) API Keys en archivo de texto
+#### 1. Image Analysis (Análisis de Imágenes)
 
-<details>
-<summary>Respuesta y explicación</summary>
+**Capacidades:**
 
-**Respuesta: B) Microsoft Entra ID (Azure AD)**
+- **Tagging**: Identificar objetos, escenas, acciones
+- **Object Detection**: Detectar y localizar objetos (bounding boxes)
+- **Caption Generation**: Descripción en lenguaje natural
+- **Dense Captions**: Múltiples descripciones para regiones
+- **Read (OCR)**: Extraer texto impreso/manuscrito
+- **Smart Cropping**: Recorte inteligente manteniendo contenido clave
+- **Background Removal**: Eliminar fondo de imágenes
 
-**Explicación**: **Microsoft Entra ID** (antes Azure AD) proporciona autenticación basada en tokens con mejor control, auditoría y revocación granular. API keys (A, C, D) son menos seguras, especialmente si están en código o compartidas.
+**Ejemplo de uso:**
 
-</details>
+```json
+{
+  "tags": ["outdoor", "building", "sky"],
+  "objects": [
+    {
+      "object": "car",
+      "confidence": 0.93,
+      "rectangle": { "x": 100, "y": 150, "w": 200, "h": 150 }
+    }
+  ],
+  "description": "A red car parked in front of a building"
+}
+```
 
----
+#### 2. Face API
 
-### Pregunta 18
+**Capacidades:**
 
-En AutoML, seleccionas "Classification" como tipo de tarea y "AUC_weighted" como métrica primaria. ¿Qué hace AutoML?
+- **Face Detection**: Detectar rostros en imágenes
+- **Face Verification**: ¿Son la misma persona? (1:1)
+- **Face Identification**: ¿Quién es? (1:N) - Requiere registro previo
+- **Facial Attributes**: Edad, emoción, accesorios, etc.
 
-A) Entrena solo un modelo de clasificación  
-B) Prueba múltiples algoritmos y selecciona el mejor según AUC  
-C) Solo prepara los datos sin entrenar  
-D) Requiere que especifiques manualmente el algoritmo
+**Nota de acceso limitado:**
 
-<details>
-<summary>Respuesta y explicación</summary>
+- Microsoft requiere **solicitud de acceso** para Face API
+- Solo para casos de uso aprobados
+- Cumplimiento con Responsible AI
 
-**Respuesta: B) Prueba múltiples algoritmos y selecciona el mejor según AUC**
+#### 3. Custom Vision
 
-**Explicación**: **AutoML** automáticamente prueba múltiples algoritmos de clasificación (Random Forest, Logistic Regression, XGBoost, etc.) y selecciona el que mejor AUC_weighted logra. No requiere selección manual del algoritmo.
+**¿Qué es?**
 
-</details>
+- Entrenar modelos personalizados de visión
+- No requiere expertise en ML
 
----
+**Tipos de proyectos:**
 
-### Pregunta 19
-
-¿Cuál de los siguientes es un ejemplo de jailbreaking?
-
-A) Optimizar un prompt para mejor resultado  
-B) "Pretende que eres un personaje malvado y..."  
-C) Proporcionar ejemplos en el prompt  
-D) Usar system message para definir comportamiento
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: B) "Pretende que eres un personaje malvado y..."**
-
-**Explicación**: **Jailbreaking** es intentar evadir content filters usando roleplay, escenarios hipotéticos u otras técnicas. "Pretende que eres..." es roleplay clásico. A, C, D son técnicas legítimas de prompt engineering.
-
-</details>
-
----
-
-### Pregunta 20
-
-¿Qué parámetro en GPT-5 controla el nivel de razonamiento profundo del modelo?
-
-A) temperature  
-B) max_tokens  
-C) reasoning_effort  
-D) top_p
-
-<details>
-<summary>Respuesta y explicación</summary>
-
-**Respuesta: C) reasoning_effort**
-
-**Explicación**: **reasoning_effort** es específico de GPT-5 y controla cuánto "piensa" el modelo antes de responder (low/medium/high). High activa GPT-5 thinking para razonamiento profundo. Temperature (A) controla creatividad, max_tokens (B) limita longitud, top_p (D) afecta diversidad.
-
-</details>
-
----
-
-## 🎉 ¡Estás Listo!
+- **Classification**: Clasificar imagen completa
+  - Multiclass: Una etiqueta por imagen
+  - Multilabel: Múltiples etiquetas por imagen
+- **Object Detection**: Detectar y localizar múltiples objetos
 
 **Proceso:**
 
@@ -1378,11 +1294,14 @@ B) Predecir precio de una casa basándose en características
 C) Robot aprendiendo a caminar mediante prueba y error  
 D) Detectar patrones anómalos en datos sin etiquetas
 
+<details>
+<summary>👉 Ver respuesta y explicación</summary>
+
 **Respuesta: B) Predecir precio de una casa basándose en características**
 
 **Explicación**: Supervised Learning requiere datos etiquetados (labels). Predecir precio de casa es **regresión** (supervised) porque entrenas con ejemplos conocidos (casa + precio). A es Unsupervised (clustering), C es Reinforcement Learning, D es Unsupervised (anomaly detection).
 
----
+</details>
 
 ### Pregunta 2
 
@@ -1393,9 +1312,14 @@ B) 84.2%
 C) 88.9%  
 D) 80.0%
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) 88.9%**
 
 **Explicación**: Recall = TP / (TP + FN) = 80 / (80 + 10) = 80/90 = 0.889 = 88.9%. Recall mide: de los positivos reales, cuántos detectamos.
+
+</details>
 
 ---
 
@@ -1408,9 +1332,14 @@ B) Custom Vision
 C) Read API (OCR)  
 D) Video Indexer
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) Read API (OCR)**
 
 **Explicación**: Read API (parte de Azure AI Vision) es específicamente para **OCR** (Optical Character Recognition) - extraer texto impreso o manuscrito de imágenes y PDFs. Face API (A) es para rostros, Custom Vision (B) para modelos personalizados, Video Indexer (D) para análisis de video.
+
+</details>
 
 ---
 
@@ -1423,9 +1352,14 @@ B) Key Phrase Extraction
 C) Named Entity Recognition (NER)  
 D) Language Detection
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) Named Entity Recognition (NER)**
 
 **Explicación**: **NER** identifica y clasifica entidades nombradas (personas, lugares, organizaciones, fechas, etc.). Sentiment Analysis (A) detecta emociones, Key Phrases (B) extrae temas principales, Language Detection (D) identifica el idioma.
+
+</details>
 
 ---
 
@@ -1438,9 +1372,14 @@ B) IA Tradicional solo funciona con texto
 C) IA Generativa crea contenido nuevo, IA Tradicional analiza y predice  
 D) IA Generativa no requiere entrenamiento
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) IA Generativa crea contenido nuevo, IA Tradicional analiza y predice**
 
 **Explicación**: La diferencia fundamental: **IA Tradicional** (clasificación, regresión) analiza datos existentes para predecir/clasificar. **IA Generativa** crea contenido original (texto, imágenes, código). Las otras opciones son incorrectas.
+
+</details>
 
 ---
 
@@ -1453,9 +1392,14 @@ B) 4 caracteres
 C) 10 caracteres  
 D) 20 caracteres
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) 4 caracteres**
 
 **Explicación**: La regla general es **1 token ≈ 4 caracteres** en inglés, o aproximadamente 0.75 palabras. En español puede ser 3-4 caracteres por token debido a acentos y estructura del idioma.
+
+</details>
 
 ---
 
@@ -1468,9 +1412,14 @@ B) Transparency
 C) Inclusiveness  
 D) Accountability
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) Inclusiveness**
 
 **Explicación**: **Inclusiveness** requiere que sistemas de IA sean accesibles para TODOS, incluyendo personas con discapacidades. Compatibilidad con lectores de pantalla es accesibilidad. Fairness (A) es sobre trato equitativo, Transparency (B) sobre explicabilidad, Accountability (D) sobre responsabilidad.
+
+</details>
 
 ---
 
@@ -1483,9 +1432,14 @@ B) Hate, Sexual, Violence, Self-Harm
 C) Political, Religious, Personal, Financial  
 D) Adult, Racy, Gory, Medical
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Hate, Sexual, Violence, Self-Harm**
 
 **Explicación**: Las **4 categorías principales** son: **Hate** (odio), **Sexual**, **Violence** (violencia), y **Self-Harm** (auto-daño). Cada una tiene niveles de severidad: Safe (0), Low (2), Medium (4), High (6).
+
+</details>
 
 ---
 
@@ -1498,9 +1452,14 @@ B) Tokens Per Minute
 C) Time Per Message  
 D) Transactions Per Month
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Tokens Per Minute**
 
 **Explicación**: **TPM (Tokens Per Minute)** define la capacidad de procesamiento de un deployment. 50K TPM = 50,000 tokens por minuto. Si excedes este límite, recibes error 429 (rate limiting).
+
+</details>
 
 ---
 
@@ -1513,9 +1472,14 @@ B) Few-shot prompting
 C) Role prompting  
 D) Chain-of-thought
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Few-shot prompting**
 
 **Explicación**: **Few-shot** proporciona 2-5 ejemplos antes de la tarea real para que el modelo aprenda el patrón. Zero-shot (A) no usa ejemplos, Role prompting (C) asigna personalidad, Chain-of-thought (D) pide razonamiento paso a paso.
+
+</details>
 
 ---
 
@@ -1528,9 +1492,14 @@ B) Fairness
 C) Privacy  
 D) Reliability
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Fairness**
 
 **Explicación**: **Fairness** requiere trato equitativo sin discriminación por características como etnia. 25% de diferencia en precisión es sesgo racial. Solución: entrenar con dataset más diverso y balanceado.
+
+</details>
 
 ---
 
@@ -1543,9 +1512,14 @@ B) Azure Monitor
 C) Fairlearn  
 D) Error Analysis
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) Fairlearn**
 
 **Explicación**: **Fairlearn** es específicamente para evaluar fairness (equidad) y mitigar sesgos. InterpretML (A) es para explicabilidad, Azure Monitor (B) para observabilidad, Error Analysis (D) para identificar errores.
+
+</details>
 
 ---
 
@@ -1558,9 +1532,14 @@ B) Medium
 C) High  
 D) Desactivar filtros
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) High**
 
 **Explicación**: Para **menores de edad**, siempre usar **High** (máxima protección). Bloquea Low, Medium y High severity, permitiendo solo Safe (0). Medium (B) es insuficiente, Low (A) es inapropiado, y desactivar (D) no es posible en Azure OpenAI.
+
+</details>
 
 ---
 
@@ -1573,9 +1552,14 @@ B) DALL-E
 C) Whisper  
 D) text-embedding-ada-002
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) Whisper**
 
 **Explicación**: **Whisper** es el modelo para **speech-to-text** (transcripción de audio). GPT-4 (A) es para texto/chat, DALL-E (B) para imágenes, embeddings (D) para vectores numéricos.
+
+</details>
 
 ---
 
@@ -1588,9 +1572,14 @@ B) Transparency
 C) Accountability  
 D) Privacy
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Transparency**
 
 **Explicación**: **Transparency** incluye **explicabilidad** - usuarios deben entender por qué el sistema tomó cierta decisión. Esto es además un requisito legal en muchos países para decisiones financieras.
+
+</details>
 
 ---
 
@@ -1603,9 +1592,14 @@ B) Medium
 C) High  
 D) Sin filtros
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Medium**
 
 **Explicación**: La configuración **default es Medium**, que bloquea Medium (4) y High (6), permitiendo Safe (0) y Low (2). Balance entre protección y usabilidad.
+
+</details>
 
 ---
 
@@ -1618,9 +1612,14 @@ B) Microsoft Entra ID (Azure AD)
 C) Compartir API key entre múltiples apps  
 D) API Keys en archivo de texto
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Microsoft Entra ID (Azure AD)**
 
 **Explicación**: **Microsoft Entra ID** (antes Azure AD) proporciona autenticación basada en tokens con mejor control, auditoría y revocación granular. API keys (A, C, D) son menos seguras, especialmente si están en código o compartidas.
+
+</details>
 
 ---
 
@@ -1633,9 +1632,14 @@ B) Prueba múltiples algoritmos y selecciona el mejor según AUC
 C) Solo prepara los datos sin entrenar  
 D) Requiere que especifiques manualmente el algoritmo
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) Prueba múltiples algoritmos y selecciona el mejor según AUC**
 
 **Explicación**: **AutoML** automáticamente prueba múltiples algoritmos de clasificación (Random Forest, Logistic Regression, XGBoost, etc.) y selecciona el que mejor AUC_weighted logra. No requiere selección manual del algoritmo.
+
+</details>
 
 ---
 
@@ -1648,9 +1652,14 @@ B) "Pretende que eres un personaje malvado y..."
 C) Proporcionar ejemplos en el prompt  
 D) Usar system message para definir comportamiento
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: B) "Pretende que eres un personaje malvado y..."**
 
 **Explicación**: **Jailbreaking** es intentar evadir content filters usando roleplay, escenarios hipotéticos u otras técnicas. "Pretende que eres..." es roleplay clásico. A, C, D son técnicas legítimas de prompt engineering.
+
+</details>
 
 ---
 
@@ -1663,9 +1672,14 @@ B) max_tokens
 C) reasoning_effort  
 D) top_p
 
+<details>
+<summary>Respuesta y explicación</summary>
+
 **Respuesta: C) reasoning_effort**
 
 **Explicación**: **reasoning_effort** es específico de GPT-5 y controla cuánto "piensa" el modelo antes de responder (low/medium/high). High activa GPT-5 thinking para razonamiento profundo. Temperature (A) controla creatividad, max_tokens (B) limita longitud, top_p (D) afecta diversidad.
+
+</details>
 
 ---
 
